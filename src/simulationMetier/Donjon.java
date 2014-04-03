@@ -17,6 +17,24 @@ public class Donjon {
 	private Case cases[][];
 	private Random hasard;
 	
+	public Donjon(int grilleX, int grilleY, int nbrObstacle, int nbrHumainClassique, int nbrHumaineEclaireur, int nbrHumainTeleport, int nbrHumainBuffer)
+	{
+		largeurGrille = grilleX;
+		longueurGrille = grilleY;
+		nombreObstacle = nbrObstacle;
+		this.nbrHumainClassique = nbrHumainClassique;
+		this.nbrHumainBuffer = nbrHumainBuffer;
+		this.nbrHumainEclaireur = nbrHumaineEclaireur;
+		this.nbrHumainTeleport = nbrHumainTeleport;
+		
+		
+		
+		
+		
+		
+		
+	}
+	
 	
 	
 
