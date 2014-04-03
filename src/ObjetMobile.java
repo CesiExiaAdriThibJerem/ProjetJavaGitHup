@@ -3,33 +3,27 @@ public class ObjetMobile {
 	
 	protected int vision;
 	protected int deplacement;
-	protected String typeObjet;
 	
-	public void setImage(String typeObjet)
+	
+	public void setImage()
 	{
 		
 	}
-	protected void setDeplacement(String typeObjet)
-	{
-		
-		
-	}
-	private void avancer()
+	
+	
+	protected void avancer(int move)
 	{
 		
 	}
-	private void allerADroite()
+	protected void tournerADroite()
 	{
 		
 	}
-	private void allerAGauche()
+	protected void tournerAGauche()
 	{
 		
 	}
-	private void demiTour()
-	{
-		
-	}
+	
 	
 
 }
