@@ -6,5 +6,10 @@ public class Humain extends ObjetMobile {
 		this.deplacement=1;
 		this.vision=2;
 	}
+	private void bouger()
+	{
+		
+	}
+	
 
 }

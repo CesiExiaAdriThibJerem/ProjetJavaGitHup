@@ -6,17 +6,25 @@ public class Monstre extends ObjetMobile
 	{
 		this.deplacement=1;
 		this.vision=1;
+		int hp = 100;
 	}
 	private void bouger()
 	{
 		boolean testObstacle;
-		this.deplacement(deplacement);
+		this.avancer(deplacement);
 		testObstacle = this.obstacleDevant();
 		if (testObstacle == true)
 		{
 			
+			this.demiTour();
 		}
 		
+		
+	}
+	private void demiTour()
+	{
+		this.tournerADroite();
+		this.tournerADroite();
 	}
 	private boolean obstacleDevant()
 	{
@@ -26,6 +34,10 @@ public class Monstre extends ObjetMobile
 	    // si oui retourne true
 	    
 		return obstacle;
+	}
+	void mangerHumain()
+	{
+		
 	}
 
 }
