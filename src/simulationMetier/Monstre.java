@@ -5,6 +5,7 @@ package simulationMetier;
 public class Monstre extends ElementsMobile
 {
 	private int hp;
+	private int compteurObstacle=0;
 	Monstre()
 	{
 		this.direction=4;
@@ -15,16 +16,28 @@ public class Monstre extends ElementsMobile
 		this.y = getY();
 	}
 	protected void bouger()
-	{
+	{		
 		
-		
-		boolean testObstacle;
-		this.avancer();
+		boolean testObstacle;		
 		testObstacle = this.obstacleDevant(this.x, this.y);
 		if (testObstacle == true)
 		{
-			
-			this.demiTour();
+			if(compteurObstacle==3)
+			{
+				this.demiTour();
+				this.avancer();
+				compteurObstacle = 0;
+			}
+			else
+			{
+				this.tournerADroite();
+				this.avancer();
+				compteurObstacle = compteurObstacle +1;
+			}
+		}
+		else
+		{
+			this.avancer();
 		}
 		hp=hp-1;
 		
