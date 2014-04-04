@@ -10,15 +10,12 @@ public abstract class ElementsMobile {
 	
 	protected int vision;
 	protected int deplacement;
-<<<<<<< HEAD
+
 	protected int direction;
 	protected Donjon donjon;
 	protected int x;
 	protected int y;
-=======
-	
-	protected Case position[][];
->>>>>>> 27a4223dd905660823a4f6df058db68271987900
+
 	
 	
 	public void setImage()
@@ -35,7 +32,7 @@ public abstract class ElementsMobile {
 	}
 	public int getY()
 	{
-<<<<<<< HEAD
+
 		return this.y;//permet de connaitre la position y(ordonnée) d'un element
 	}
 	
@@ -57,9 +54,7 @@ public abstract class ElementsMobile {
 		default :
 		return this.x;		
 		} 
-=======
-		
->>>>>>> 27a4223dd905660823a4f6df058db68271987900
+
 		
 	}
 	public int modifierY()

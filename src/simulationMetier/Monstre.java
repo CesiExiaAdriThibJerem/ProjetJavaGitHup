@@ -52,6 +52,11 @@ public class Monstre extends ElementsMobile
 	}
 	void mangerHumain()
 	{
+		hp=hp+20;
+	}
+	@Override
+	protected void modifDirection() {
+		// TODO Auto-generated method stub
 		
 	}
 
