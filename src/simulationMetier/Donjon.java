@@ -21,6 +21,8 @@ public class Donjon {
 	
 	private Plateau plateauJeu;
 	
+	
+	//Creation du Donjon
 	public Donjon(int grilleX, int grilleY, int nbrObstacle, int nbrHumainClassique, int nbrHumaineEclaireur, int nbrHumainTeleport, int nbrHumainBuffer)
 	{
 		largeurGrille = grilleX;
@@ -35,6 +37,8 @@ public class Donjon {
 		this.hasard = new Random();
 		
 		Case unecase;
+		
+		//Parcour les cases du tableau pour placer les coins
 		
 		for (int y=0; y< longueurGrille; y++)
 		{
@@ -57,6 +61,8 @@ public class Donjon {
 				{
 					unecase = new CoinBasGauche();
 				}
+				
+				// Pour placer les bords
 				else if ((y==0 && x != 0 && x != largeurGrille-1) || (y==longueurGrille-1 && x != 0 && x != largeurGrille-1))
 				{
 					unecase = new MurHorizontal();
@@ -66,10 +72,13 @@ public class Donjon {
 					unecase = new MurVertical();
 					
 				}
+				
+				//Placer les tours de façon aléatoire
 				else if (hasard.nextInt(10)==0)
 				{
 					unecase = new Tour();
 				}
+				//Le reste en sol
 				else 
 				{
 					unecase = construireUnSol();
@@ -83,11 +92,15 @@ public class Donjon {
 			
 			
 		}
+		
+		//Instanciation du plateau
 
 		this.plateauJeu = new Plateau(this.largeurGrille, this.longueurGrille, this.cases);
 		
 		
 	}
+	
+	//Methode permettant de choisir aléatoirement un des 3 sols
 	public Case getPosition(int x, int y)
 	{
 		return this.cases[x][y];
@@ -113,15 +126,29 @@ public class Donjon {
 		
 	}
 	
+	//Methode pour placer les elements mobiles
 	private void placerUnElementMobileAuHasard(ElementsMobile e)
 	{
 		int x = this.hasard.nextInt(this.largeurGrille);
 		int y = this.hasard.nextInt(this.longueurGrille);
 		
-	
-		// methode pour placer le rocher si la case est vide (estVide = true)
+		//tant que la case n'est pas vide boucle
+		while (cases[x][y].estVide()==false)
+		{
+			x = this.hasard.nextInt(this.largeurGrille);
+			y = this.hasard.nextInt(this.longueurGrille);
+		}
+		
+    //Definit les coordonées de l'objet à placer
+		e.modifierX();
+		e.modifierY();
 		
 		
+		
+		
+		
+		
+
 		
 		
 	}
