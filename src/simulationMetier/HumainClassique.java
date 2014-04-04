@@ -1,5 +1,5 @@
 package simulationMetier;
 
-public class HumainClassique {
+public class HumainClassique extends Humain{
 
 }
