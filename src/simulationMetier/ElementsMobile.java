@@ -18,13 +18,10 @@ public abstract class ElementsMobile {
 
 	
 	
-	public void setImage()
-	{
-		
-	}
+	public abstract void setImage();
 	
-	protected abstract void modifDirection();	//permet modifier la direction de 
-												//deplacement des diff elements mobiles
+	
+	
 	
 	public int getX()
 	{

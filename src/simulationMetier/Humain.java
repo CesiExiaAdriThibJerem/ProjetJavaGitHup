@@ -10,13 +10,17 @@ public class Humain extends ElementsMobile {
 		this.vision=2;
 		this.enVie= true;
 	}
-	private void bouger()
+	protected void bouger()
 	{
 		if(this.enVie==true)
 		{
 			
 			
 		}
+	}
+	public void setImage()
+	{
+		
 	}
 	
 

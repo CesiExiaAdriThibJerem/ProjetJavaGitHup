@@ -15,6 +15,11 @@ public class Monstre extends ElementsMobile
 		this.x = getX();
 		this.y = getY();
 	}
+	
+	public void setImage()
+	{
+		
+	}
 	protected void bouger()
 	{		
 		
@@ -66,11 +71,6 @@ public class Monstre extends ElementsMobile
 	void mangerHumain()
 	{
 		hp=hp+20;
-	}
-	@Override
-	protected void modifDirection() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
