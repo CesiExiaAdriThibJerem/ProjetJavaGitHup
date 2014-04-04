@@ -89,9 +89,9 @@ public class Donjon {
 		
 		
 	}
-	public Case[][] getPosition()
+	public Case getPosition(int x, int y)
 	{
-		return this.cases;
+		return this.cases[x][y];
 	}
 	
 	private Case construireUnSol()
