@@ -1,5 +1,8 @@
 package simulationMetier;
 
-public class HumainTeleport {
-
+public class HumainTeleport extends Humain {
+	public HumainTeleport()
+	{
+		super("hommeteleport.png");
+	}
 }

@@ -1,5 +1,9 @@
 package simulationMetier;
 
-public class HumainEclaireur {
+public class HumainEclaireur extends Humain {
+	public HumainEclaireur()
+	{
+		super("hommeeclaireur.png");
+	}
 
 }
