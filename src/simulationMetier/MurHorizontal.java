@@ -1,5 +1,5 @@
 package simulationMetier;
 
-public class MurHorizontal {
+public class MurHorizontal extends Bordure{
 
 }

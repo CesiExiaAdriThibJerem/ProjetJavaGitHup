@@ -1,5 +1,5 @@
 package simulationMetier;
 
-public class Sol1 {
+public class Sol1 extends Sol{
 
 }

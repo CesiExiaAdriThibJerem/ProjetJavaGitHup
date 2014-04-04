@@ -1,5 +1,5 @@
 package simulationMetier;
 
-public class CoinHautGauche {
+public class CoinHautGauche extends Bordure{
 
 }
