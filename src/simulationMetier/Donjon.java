@@ -2,6 +2,8 @@ package simulationMetier;
 
 import java.util.Random;
 
+import simulationInterface.Plateau;
+
 public class Donjon {
 	
 	private int largeurGrille;
@@ -16,6 +18,8 @@ public class Donjon {
 	
 	private Case cases[][];
 	private Random hasard;
+	
+	private Plateau plateauJeu;
 	
 	public Donjon(int grilleX, int grilleY, int nbrObstacle, int nbrHumainClassique, int nbrHumaineEclaireur, int nbrHumainTeleport, int nbrHumainBuffer)
 	{
@@ -72,12 +76,17 @@ public class Donjon {
 					
 				}
 				
+				this.cases[x][y]= unecase;
+				
+				
 				
 			}
 			
 			
 		}
 
+		this.plateauJeu = new Plateau(this.largeurGrille, this.longueurGrille, this.cases);
+		
 		
 	}
 	
