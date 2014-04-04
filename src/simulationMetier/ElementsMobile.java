@@ -4,7 +4,6 @@ package simulationMetier;
 public class ElementsMobile {
 	protected int vision;
 	protected int deplacement;
-	Donjon cases = new Donjon();
 	
 	protected Case position[][];
 	
