@@ -4,35 +4,47 @@ package simulationMetier;
 
 public class Monstre extends ElementsMobile
 {
-	
+	private int hp;
 	Monstre()
 	{
+		this.direction=4;
 		this.deplacement=1;
 		this.vision=1;
-		int hp = 100;
+		hp = 100;
+		this.x = getX();
+		this.y = getY();
 	}
-	private void bouger()
+	protected void bouger()
 	{
+		
+		
 		boolean testObstacle;
-		this.avancer(deplacement);
-		testObstacle = this.obstacleDevant();
+		this.avancer();
+		testObstacle = this.obstacleDevant(this.x, this.y);
 		if (testObstacle == true)
 		{
 			
 			this.demiTour();
 		}
+		hp=hp-1;
 		
 		
 	}
+	public int getHp()
+	{
+		return this.hp;
+	}
+	
 	private void demiTour()
 	{
 		this.tournerADroite();
 		this.tournerADroite();
 	}
-	private boolean obstacleDevant()
+	private boolean obstacleDevant(int x, int y)
 	{
-	    boolean obstacle=true;
+	    boolean obstacle;
 	    
+	    obstacle = this.donjon.getPosition(x, y).estVide();
 	    //detection si il ya mur ou rocher devant le monstre
 	    // si oui retourne true
 	    
