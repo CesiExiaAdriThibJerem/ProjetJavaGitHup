@@ -1,5 +1,10 @@
 package simulationMetier;
 
+import java.awt.Image;
+import java.io.File;
+
+import javax.imageio.ImageIO;
+
 
 public abstract class ElementsMobile {
 	
@@ -15,10 +20,26 @@ public abstract class ElementsMobile {
 	protected Donjon donjon;
 	protected int x;
 	protected int y;
+	
+	private Image img;
 
 	
 	
-	public abstract void setImage();
+	public void setImage(final String image)
+	{
+		try {
+					
+					
+				this.img = ImageIO.read(new File("image/"+img));
+					
+			} catch (Exception e) 
+				
+			{
+				System.out.print("impossible d'afficher l'image: "+ img);
+					
+					
+			}
+	}
 	
 	
 	

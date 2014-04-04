@@ -8,7 +8,8 @@ public class Monstre extends ElementsMobile
 	private int compteurObstacle=0;
 	Monstre()
 	{
-		this.direction=4;
+		setImage("monstre.png");
+		this.direction=sud;
 		this.deplacement=1;
 		this.vision=1;
 		hp = 100;
@@ -16,10 +17,7 @@ public class Monstre extends ElementsMobile
 		this.y = getY();
 	}
 	
-	public void setImage()
-	{
-		
-	}
+	
 	protected void bouger()
 	{		
 		
