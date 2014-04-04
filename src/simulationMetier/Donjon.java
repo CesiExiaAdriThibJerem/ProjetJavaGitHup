@@ -1,26 +1,23 @@
 package simulationMetier;
 
+import java.util.ArrayList;
 import java.util.Random;
-
 import simulationInterface.Plateau;
 
 public class Donjon {
 	
 	private int largeurGrille;
 	private int longueurGrille;
-	
 	private int nombreObstacle;
-	
 	private int nbrHumainClassique;
 	private int nbrHumainEclaireur;
 	private int nbrHumainTeleport;
 	private int nbrHumainBuffer;
-	
 	private Case cases[][];
 	private Random hasard;
 	
 	private Plateau plateauJeu;
-	
+	private ArrayList<ElementsMobile> mobile;
 	
 	//Creation du Donjon
 	public Donjon(int grilleX, int grilleY, int nbrObstacle, int nbrHumainClassique, int nbrHumaineEclaireur, int nbrHumainTeleport, int nbrHumainBuffer)
@@ -139,21 +136,89 @@ public class Donjon {
 			y = this.hasard.nextInt(this.longueurGrille);
 		}
 		
-    //Definit les coordonées de l'objet à placer
-		e.modifierX();
-		e.modifierY();
-		
-		
-		
-		
+		// renvoi a ElementsMobile les nouvelles coordonnées
+		e.setX(x);
+		e.setY(y);
 		
 		
 
+		
+	}
+	
+	// méthode avec les coordonnées
+	public void setXY(int x, int y, Case c)
+	{
+		this.cases[x][y] = c;
 		
 		
 	}
 	
+	// Placer les humains Buffers
+	private void placerLesBuffers()
+	{
+		HumainBuffer e;
+		
+		//Recupere le nombre d'objet à placer et increment en fonction
+		for (int i = 0; i < this.nbrHumainBuffer; i++)
+		{
+			e = new HumainBuffer();
+			this.mobile.add(e);
+			this.placerUnElementMobileAuHasard(e);
+			//LePlacer sur le plateau
+			
+			
+		}
+	}
+	
+	private void placerLesClassiques()
+	{
+		HumainClassique e;
+		
+		//Recupere le nombre d'objet à placer et increment en fonction
+		for (int i = 0; i < this.nbrHumainBuffer; i++)
+		{
+			e = new HumainClassique();
+			this.mobile.add(e);
+			this.placerUnElementMobileAuHasard(e);
+			//LePlacer sur le plateau
+			
+			
+		}
+	}
+	private void placerLesEclaireur()
+	{
+		HumainEclaireur e;
+		
+		//Recupere le nombre d'objet à placer et increment en fonction
+		for (int i = 0; i < this.nbrHumainBuffer; i++)
+		{
+			e = new HumainEclaireur();
+			this.mobile.add(e);
+			this.placerUnElementMobileAuHasard(e);
+			//LePlacer sur le plateau
+			
+			
+		}
+	}
+	private void placerLesTeleports()
+	{
+		HumainTeleport e;
+		
+		//Recupere le nombre d'objet à placer et increment en fonction
+		for (int i = 0; i < this.nbrHumainBuffer; i++)
+		{
+			e = new HumainTeleport();
+			this.mobile.add(e);
+			this.placerUnElementMobileAuHasard(e);
+			//LePlacer sur le plateau
+			
+			
+		}
+	}
+	
 
+	
+	
 			
 		
 	}
