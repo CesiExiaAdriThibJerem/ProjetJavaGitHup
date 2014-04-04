@@ -4,7 +4,7 @@ public class MurHorizontal extends Bordure{
 	
 	public MurHorizontal()
 	{
-		super("murHorizontal.png");
+		super("murHorizontal.png", false);
 		
 	}
 

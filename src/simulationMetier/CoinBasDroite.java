@@ -4,7 +4,7 @@ public class CoinBasDroite extends Bordure{
 	
 	public CoinBasDroite()
 	{
-		super("coinBasDroite.png");
+		super("coinBasDroite.png", false);
 		
 	}
 

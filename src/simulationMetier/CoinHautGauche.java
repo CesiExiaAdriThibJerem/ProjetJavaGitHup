@@ -5,7 +5,7 @@ public class CoinHautGauche extends Bordure{
 	public CoinHautGauche()
 	
 	{
-		super("coinHautGauche.png");
+		super("coinHautGauche.png", false);
 	}
 
 }

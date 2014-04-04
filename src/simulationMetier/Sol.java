@@ -2,9 +2,9 @@ package simulationMetier;
 
 public class Sol extends Case{
 	
-	public Sol(String image)
+	public Sol(String image, boolean vide)
 	{
-		super(image);
+		super(image, true);
 		
 	}
 

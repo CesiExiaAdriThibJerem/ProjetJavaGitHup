@@ -4,7 +4,7 @@ public class Sol1 extends Sol{
 	
 	public Sol1()
 	{
-		super("sol1.png");
+		super("sol1.png", true);
 		
 	}
 	

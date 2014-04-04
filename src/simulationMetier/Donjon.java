@@ -77,8 +77,7 @@ public class Donjon {
 				}
 				
 				this.cases[x][y]= unecase;
-				
-				
+
 				
 			}
 			
@@ -111,6 +110,19 @@ public class Donjon {
 			c = new Sol3();
 		}
 		return c;
+		
+	}
+	
+	private void placerUnElementMobileAuHasard(ElementsMobile e)
+	{
+		int x = this.hasard.nextInt(this.largeurGrille);
+		int y = this.hasard.nextInt(this.longueurGrille);
+		
+	
+		// methode pour placer le rocher si la case est vide (estVide = true)
+		
+		
+		
 		
 	}
 	

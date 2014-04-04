@@ -4,7 +4,7 @@ public class Tour extends Case{
 	
 	public Tour()
 	{
-		super("Tour.png");
+		super("Tour.png", false);
 		
 	}
 	
