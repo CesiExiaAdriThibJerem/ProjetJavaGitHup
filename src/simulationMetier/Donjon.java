@@ -89,9 +89,6 @@ public class Donjon {
 		
 		
 	}
-	public Donjon() {
-		// TODO Auto-generated constructor stub
-	}
 	public Case[][] getPosition()
 	{
 		return this.cases;
