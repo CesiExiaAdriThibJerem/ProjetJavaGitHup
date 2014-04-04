@@ -16,7 +16,7 @@ public class ElementsMobile {
 	
 	protected void avancer(int move)
 	{
-		position = cases.getPosition();
+		
 		
 	}
 	protected void tournerADroite()
