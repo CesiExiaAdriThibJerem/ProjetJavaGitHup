@@ -10,34 +10,32 @@ import javax.swing.JPanel;
 import simulationMetier.Case;
 
 public class Plateau {
-	private int largeur;
-	private int longueur;
+	
 	
 	public Plateau(int largeur, int longueur, Case[][] casesDonjons) {
 		
-		this.largeur = largeur;
-		this.longueur = longueur;
+		
 		
 		JFrame fen = new JFrame();
 		
 		fen.setTitle("Donjons");
 		fen.setLocationRelativeTo(null);
 		fen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		fen.setSize(1280,920);
+		fen.setSize(30*largeur,30*longueur);
 		
 		JPanel contentpan = new JPanel();
 		GridLayout cl = new GridLayout(largeur,longueur);
 		contentpan.setLayout(cl);
 		
-		for (int y = 0; y < this.largeur; y++) 
+		for (int y = 0; y < largeur; y++) 
 		{
-			for (int x = 0; x < this.longueur; x++) 
+			for (int x = 0; x < longueur; x++) 
 			{				
 				contentpan.add(new JLabel(new ImageIcon(casesDonjons[x][y].getImage())));							
 			}
 		}
 		
-			
+		fen.setResizable(false);	
 		fen.setContentPane(contentpan);
 		fen.setVisible(true);
 	}
