@@ -1,5 +1,5 @@
 package simulationMetier;
 
-public class MurVertical {
+public class MurVertical extends Bordure{
 
 }

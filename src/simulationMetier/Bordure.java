@@ -1,5 +1,5 @@
 package simulationMetier;
 
-public class Bordure {
+public class Bordure extends Case {
 
 }

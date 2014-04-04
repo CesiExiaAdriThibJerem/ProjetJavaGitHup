@@ -1,5 +1,5 @@
 package simulationMetier;
 
-public class Tour {
+public class Tour extends Case{
 
 }
