@@ -16,6 +16,7 @@ public abstract class ElementsMobile {
 	
 	protected int vision;
 	protected int deplacement;
+	protected boolean vivant;
 
 	protected int direction;
 	protected Donjon donjon;

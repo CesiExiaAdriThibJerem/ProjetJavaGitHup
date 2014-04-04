@@ -3,7 +3,7 @@ package simulationMetier;
 
 
 public class Humain extends ElementsMobile {
-	private boolean enVie;
+	protected boolean enVie;
 	Humain()
 	{
 		this.deplacement=1;
@@ -17,14 +17,10 @@ public class Humain extends ElementsMobile {
 	{
 		setImage(img);
 	}
-	protected void bouger()
-	{
-		if(this.enVie==true)
-		{
-			modifierDirection();
-			avancer(deplacement);
-			
-		}
+	
+	protected void bouger() {
+		
+		
 	}
 	
 	

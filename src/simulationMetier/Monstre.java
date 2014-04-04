@@ -68,6 +68,7 @@ public class Monstre extends ElementsMobile
 	}
 	void mangerHumain()
 	{
+		
 		hp=hp+20;
 		
 	}
