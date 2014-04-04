@@ -42,20 +42,20 @@ public class Donjon {
 			{
 				if (y==0 && x==0)
 				{
-					unecase = new CoinHautGauche();
+					unecase = new CoinHautDroite();
 
 				}
 				else if (y==0 && x== largeurGrille-1)
 				{
-					unecase = new CoinHautDroite();
+					unecase = new CoinHautGauche();
 				}
 				else if (y== longueurGrille-1 && x==0)
 				{
-					unecase = new CoinBasGauche();
+					unecase = new CoinBasDroite();
 				}
 				else if (y== longueurGrille-1 && x== largeurGrille-1)
 				{
-					unecase = new CoinBasDroite();
+					unecase = new CoinBasGauche();
 				}
 				else if ((y==0 && x != 0 && x != largeurGrille-1) || (y==longueurGrille-1 && x != 0 && x != largeurGrille-1))
 				{
@@ -114,6 +114,13 @@ public class Donjon {
 		
 	}
 	
+
+			
+		
+	}
+	
+	
 	
 
-}
+
+
