@@ -22,7 +22,7 @@ public class Evenements implements ActionListener{
 		if (nom.equals("Nouveau Jeu")) {
 			
 			String Staillex = fen.getTaillexField().getText();
-			String Stailley = fen.getTailleyField().getText();
+			String Stailley = fen.getTaillexField().getText();
 			String SnbrObs = fen.getNbrobsField().getText();
 			String SnbrHuma = fen.getNbrhumaField().getText();
 			String SnbrEclair = fen.getNbreclairField().getText();

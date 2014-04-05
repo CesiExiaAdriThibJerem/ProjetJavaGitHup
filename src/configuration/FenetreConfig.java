@@ -45,7 +45,7 @@ public class FenetreConfig extends JFrame{
 		JLabel bienvenue = new JLabel("Bienvenue dans Donjons !"); bienvenue.setFont(police);
 		JLabel regle = new JLabel("Veuillez configurer les paramètre de jeu :"); regle.setFont(police);
 		
-		JLabel taillex = new JLabel("Taille de la grille en X(entre 10 et 50) :"); taillex.setFont(police);
+		JLabel taillex = new JLabel("Taille de la grille (entre 10 et 50) :"); taillex.setFont(police);
 		JLabel tailley = new JLabel("Taille de la grille en Y(entre 10 et 50) :"); tailley.setFont(police);
 		JLabel nbrobs = new JLabel("Nombre d'obstacles(entre 0 et 30) :"); nbrobs.setFont(police);
 		JLabel nbrhuma = new JLabel("Nombre d'humains(entre 0 et 20) :"); nbrhuma.setFont(police);
@@ -69,37 +69,29 @@ public class FenetreConfig extends JFrame{
 		
 		contentpan1.add(taillex);
 		contentpan1.add(taillexField);
-		contentpan1.add(tailley);
-		contentpan1.add(tailleyField);
+		contentpan1.add(nbrobs);
+		contentpan1.add(nbrobsField);
 		
 		JPanel contentpan2 = new JPanel();
 		contentpan2.setLayout(new GridLayout(2,1));
-		
-		contentpan2.add(nbrobs);
-		contentpan2.add(nbrobsField);
+				
 		contentpan2.add(nbrhuma);
 		contentpan2.add(nbrhumaField);
+		contentpan2.add(nbreclair);
+		contentpan2.add(nbreclairField);
 		
 		JPanel contentpan3 = new JPanel();
 		contentpan3.setLayout(new GridLayout(2,1));
 		
-		contentpan3.add(nbreclair);
-		contentpan3.add(nbreclairField);
 		contentpan3.add(nbrteleport);
 		contentpan3.add(nbrteleportField);
+		contentpan3.add(nbrpretre);
+		contentpan3.add(nbrpretreField);
 		
-		JPanel contentpan4 = new JPanel();
-		contentpan4.setLayout(new GridLayout(2,1));
-		
-		contentpan4.add(nbrpretre);
-		contentpan4.add(nbrpretreField);
-		contentpan4.add(new JLabel());
-		contentpan4.add(new JLabel());
 		
 		this.add(contentpan1);
 		this.add(contentpan2);
 		this.add(contentpan3);
-		this.add(contentpan4);
 		
 		JButton butquit = new JButton("Quitter");
 		JButton butnew = new JButton("Nouveau Jeu");
