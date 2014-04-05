@@ -1,30 +1,50 @@
 package simulationMetier;
 
+import java.awt.Image;
+import java.io.File;
+import java.util.Random;
+
+import javax.imageio.ImageIO;
+
 
 public abstract class ElementsMobile {
 	
-	public final static int nord = 1;
-	public final static int ouest = 2;
-	public final static int est = 3;
-	public final static int sud = 4;
+	public final static int nord = 0;
+	public final static int ouest = 1;
+	public final static int est = 2;
+	public final static int sud = 3;
 	
 	protected int vision;
 	protected int deplacement;
+	protected boolean vivant;
 
 	protected int direction;
 	protected Donjon donjon;
 	protected int x;
 	protected int y;
+	
+	private Image img;
 
 	
 	
-	public void setImage()
+	public void setImage(final String image)
 	{
-		
+		try {
+					
+					
+				this.img = ImageIO.read(new File("image/"+img));
+					
+			} catch (Exception e) 
+				
+			{
+				System.out.print("impossible d'afficher l'image: "+ img);
+					
+					
+			}
 	}
 	
-	protected abstract void modifDirection();	//permet modifier la direction de 
-												//deplacement des diff elements mobiles
+	
+	
 	
 	public int getX()
 	{
@@ -77,15 +97,29 @@ public abstract class ElementsMobile {
 		}
 		
 	}
-	
+	public void setX(final int x) {
+		this.x = x;
+	}
+
+	public void setY(final int y) {
+		this.y = y;
+	}
 	
 	
 	abstract protected void bouger();
 	
-	protected void avancer()
+	protected void avancer(int move)
 	{
-		modifierX();
-		modifierY();
+		int i;
+		for( i=0; i<move; i++ )
+		{
+			modifierX();
+			modifierY();
+		}
+	}
+	protected void modifierDirection()
+	{
+		this.direction =new Random().nextInt(4);
 	}
 	
 	

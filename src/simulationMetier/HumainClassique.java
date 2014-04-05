@@ -1,5 +1,28 @@
 package simulationMetier;
 
-public class HumainClassique extends Humain{
+public class HumainClassique extends ElementsMobile {
+	
+	HumainClassique()
+	{
+		setImage("hommeclassique.png");
+		this.deplacement=1;
+		this.vision=2;
+		this.vivant= true;
+		this.direction=sud;
+		this.x=getX();
+		this.y=getY();
+	}
+	
+	protected void bouger() 
+	{
+		if(vivant=true)
+		{
+			modifierDirection();
+			avancer(deplacement);	
+		}
+		
+	}
+
+	
 
 }

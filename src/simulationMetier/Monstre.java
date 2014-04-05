@@ -8,13 +8,16 @@ public class Monstre extends ElementsMobile
 	private int compteurObstacle=0;
 	Monstre()
 	{
-		this.direction=4;
+		setImage("monstre.png");
+		this.direction=sud;
 		this.deplacement=1;
 		this.vision=1;
 		hp = 100;
 		this.x = getX();
 		this.y = getY();
 	}
+	
+	
 	protected void bouger()
 	{		
 		
@@ -25,19 +28,19 @@ public class Monstre extends ElementsMobile
 			if(compteurObstacle==3)
 			{
 				this.demiTour();
-				this.avancer();
+				this.avancer(deplacement);
 				compteurObstacle = 0;
 			}
 			else
 			{
 				this.tournerADroite();
-				this.avancer();
+				this.avancer(deplacement);
 				compteurObstacle = compteurObstacle +1;
 			}
 		}
 		else
 		{
-			this.avancer();
+			this.avancer(deplacement);
 		}
 		hp=hp-1;
 		
@@ -65,11 +68,8 @@ public class Monstre extends ElementsMobile
 	}
 	void mangerHumain()
 	{
+		
 		hp=hp+20;
-	}
-	@Override
-	protected void modifDirection() {
-		// TODO Auto-generated method stub
 		
 	}
 
