@@ -1,17 +1,19 @@
 package configuration;
 
+
 import simulationMetier.Donjon;
 
 public class Main {
 
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
-
-		FenetreConfig config = new FenetreConfig();
+		FenetreConfig fenconfig = new FenetreConfig();
 		
-		while (config.getValide() == false) {}
-			
-		Donjon monDonjon = new Donjon(config.getGrilleX(), config.getGrilleY(), config.getNbrObstacle(), config.getNbrHumainsClassique(), config.getNbrHumainsEclaireur(), config.getNbrHumainsTeleport(),config.getNbrHumainsBuffer());
+		while (Configurations.isValide() == false) {
+			System.out.print("");
+			}
+		
+		Donjon monDonjon = new Donjon(Configurations.getGrilleX(), Configurations.getGrilleY(), Configurations.getNbrObstacle(), Configurations.getNbrHumainsClassique(), Configurations.getNbrHumainsEclaireur(), Configurations.getNbrHumainsTeleport(),Configurations.getNbrHumainsBuffer());
 	
 
 
