@@ -10,5 +10,11 @@ public class Pierre extends ElementsMobile {
 		this.vision=0;
 	}
 
+	@Override
+	protected void bouger() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
 
