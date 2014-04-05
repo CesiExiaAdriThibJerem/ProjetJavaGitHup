@@ -5,8 +5,11 @@ import simulationMetier.Donjon;
 public class Main {
 
 	public static void main(String[] args) {
-		Donjon monDonjon = new Donjon(30, 30, 10, 5, 5,5, 5);
-
+		FenetreConfig config = new FenetreConfig();
+		
+		while (config.getValide() == false) {}
+			
+		Donjon monDonjon = new Donjon(config.getGrilleX(), config.getGrilleY(), config.getNbrObstacle(), config.getNbrHumainsClassique(), config.getNbrHumainsEclaireur(), config.getNbrHumainsTeleport(),config.getNbrHumainsBuffer());
 	}
 
 }
