@@ -27,7 +27,7 @@ public class Case {
 		} catch (Exception e) 
 		
 		{
-			System.out.print("impossible d'afficher l'image: "+ img);
+			System.out.print("impossible d'afficher l'image : "+ img);
 			
 			
 		}

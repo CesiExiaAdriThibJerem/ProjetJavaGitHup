@@ -18,11 +18,15 @@ public class Donjon {
 	private Random hasard;
 	
 	private Plateau plateauJeu;
-	private ArrayList<ElementsMobile> mobile;
+	private ArrayList<ElementsMobile> mobile = new ArrayList<>();
 	
+	
+
+
 	//Creation du Donjon
 	public Donjon(int grilleX, int grilleY, int nbrObstacle, int nbrHumainClassique, int nbrHumaineEclaireur, int nbrHumainTeleport, int nbrHumainBuffer)
 	{
+		
 		largeurGrille = grilleX;
 		longueurGrille = grilleY;
 		nombreObstacle = nbrObstacle;
@@ -91,14 +95,36 @@ public class Donjon {
 			
 		}
 		
+		
+		
 		//Instanciation du plateau
+			
 
 		this.plateauJeu = new Plateau(this.largeurGrille, this.longueurGrille, this.cases);
 		
+		placerLesBuffers();
+		placerLesClassiques();
+		placerLesEclaireur();
+		placerLesTeleports();
+		
+		placerLeMonstre();
 		
 	}
 	
 	
+	private void placerLeMonstre() {
+		
+			
+		
+			Monstre monstre = new Monstre(this);
+			this.mobile.add(monstre);
+			this.placerUnElementMobileAuHasard(monstre);
+			this.plateauJeu.placerElement(monstre);
+			//LePlacer sur le plateau		
+		
+	}
+
+
 	public Case getPosition(int x, int y)
 	{
 		return this.cases[x][y];
@@ -217,7 +243,10 @@ public class Donjon {
 		}
 	}
 	
-
+	public void jouer() {
+		
+		plateauJeu.rafraichir();
+	}
 	
 	
 			

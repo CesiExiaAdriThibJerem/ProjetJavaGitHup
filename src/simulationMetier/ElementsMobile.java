@@ -27,17 +27,24 @@ public abstract class ElementsMobile {
 
 	
 	
-	public void setImage(final String image)
+	public Image getImage() {
+		return img;
+	}
+
+
+
+
+	public void setImage(String image)
 	{
 		try {
 					
 					
-				this.img = ImageIO.read(new File("image/"+img));
+				this.img = ImageIO.read(new File("image/"+image));
 					
 			} catch (Exception e) 
 				
 			{
-				System.out.print("impossible d'afficher l'image: "+ img);
+				System.out.print("impossible d'afficher l'image: "+ image);
 					
 					
 			}

@@ -6,8 +6,9 @@ public class Monstre extends ElementsMobile
 {
 	private int hp;
 	private int compteurObstacle=0;
-	Monstre()
+	Monstre(Donjon donjon)
 	{
+		this.donjon = donjon;
 		setImage("monstre.png");
 		this.direction=sud;
 		this.deplacement=1;
