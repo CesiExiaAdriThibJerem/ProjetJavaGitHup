@@ -153,12 +153,28 @@ public class Donjon {
 	//Methode pour placer les elements mobiles
 	private void placerUnElementMobileAuHasard(ElementsMobile e)
 	{
+		boolean valide = false;
+		int nbr;
+		
 		int x = this.hasard.nextInt(this.largeurGrille);
 		int y = this.hasard.nextInt(this.longueurGrille);
 		
-		//tant que la case n'est pas vide boucle
-		while (cases[x][y].estVide()==false)
+		
+		
+		//tant que la case n'est pas vide boucle et qu'il n'y a pas d'element mobile dessus
+		while (cases[x][y].estVide()==false && valide == false)
 		{
+			nbr = 0;
+			for (ElementsMobile a : this.mobile) {
+				if ((a.getX() == x && a.getY() == y) && nbr == 0) {
+					valide = false;
+				}
+				else if (nbr == 0) {
+					nbr = 1;
+					valide =true;
+				}
+			}			
+			
 			x = this.hasard.nextInt(this.largeurGrille);
 			y = this.hasard.nextInt(this.longueurGrille);
 		}
@@ -191,7 +207,7 @@ public class Donjon {
 			e = new HumainBuffer();
 			this.mobile.add(e);
 			this.placerUnElementMobileAuHasard(e);
-			//LePlacer sur le plateau
+			this.plateauJeu.placerElement(e);
 			
 			
 		}
@@ -207,7 +223,7 @@ public class Donjon {
 			e = new HumainClassique();
 			this.mobile.add(e);
 			this.placerUnElementMobileAuHasard(e);
-			//LePlacer sur le plateau
+			this.plateauJeu.placerElement(e);
 			
 			
 		}
@@ -222,7 +238,7 @@ public class Donjon {
 			e = new HumainEclaireur();
 			this.mobile.add(e);
 			this.placerUnElementMobileAuHasard(e);
-			//LePlacer sur le plateau
+			this.plateauJeu.placerElement(e);
 			
 			
 		}
@@ -237,7 +253,7 @@ public class Donjon {
 			e = new HumainTeleport();
 			this.mobile.add(e);
 			this.placerUnElementMobileAuHasard(e);
-			//LePlacer sur le plateau
+			this.plateauJeu.placerElement(e);
 			
 			
 		}
