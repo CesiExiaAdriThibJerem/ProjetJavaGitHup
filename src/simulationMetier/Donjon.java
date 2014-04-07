@@ -106,9 +106,22 @@ public class Donjon {
 		placerLesClassiques();
 		placerLesEclaireur();
 		placerLesTeleports();
+		placerLesPierres();
 		
 		placerLeMonstre();
 		
+	}
+	
+	private void placerLesPierres() {
+		Pierre e;
+		
+		for (int i = 0; i < this.nombreObstacle; i++)
+		{
+			e = new Pierre();
+			this.mobile.add(e);
+			this.placerUnElementMobileAuHasard(e);
+			this.plateauJeu.placerElement(e);
+		}
 	}
 	
 	
