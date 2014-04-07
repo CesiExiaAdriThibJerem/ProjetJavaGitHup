@@ -14,7 +14,23 @@ public class Main {
 			}
 		
 		Donjon monDonjon = new Donjon(Configurations.getGrilleX(), Configurations.getGrilleY(), Configurations.getNbrObstacle(), Configurations.getNbrHumainsClassique(), Configurations.getNbrHumainsEclaireur(), Configurations.getNbrHumainsTeleport(),Configurations.getNbrHumainsBuffer());
-		monDonjon.jouer();
+		
+		long temps;
+		
+		for (;;) {
+			
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			monDonjon.jouer();
+			
+			
+		}
+		
 
 
 	}

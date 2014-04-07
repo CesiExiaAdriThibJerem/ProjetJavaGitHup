@@ -103,8 +103,10 @@ public class Plateau {
 									
 			}
 		}
+		
 		fen.setContentPane(contentpan);
 		fen.setVisible(true);
+		this.mobile = new ArrayList<>();
 	}
 	
 }

@@ -19,7 +19,7 @@ public class Monstre extends ElementsMobile
 	}
 	
 	
-	protected void bouger()
+	public void bouger()
 	{		
 		
 		boolean testObstacle;		

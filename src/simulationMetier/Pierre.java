@@ -12,7 +12,7 @@ public class Pierre extends ElementsMobile {
 	}
 
 	@Override
-	protected void bouger() {
+	public void bouger() {
 		// TODO Auto-generated method stub
 		
 	}

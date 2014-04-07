@@ -12,7 +12,7 @@ public class HumainBuffer extends ElementsMobile {
 		this.y=getY();
 	}
 	
-	protected void bouger() 
+	public void bouger() 
 	{
 		if(vivant=true)
 		{

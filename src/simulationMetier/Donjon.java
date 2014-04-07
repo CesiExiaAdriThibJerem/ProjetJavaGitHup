@@ -8,6 +8,14 @@ import simulationInterface.Plateau;
 public class Donjon {
 	
 	private int largeurGrille;
+	public int getLargeurGrille() {
+		return largeurGrille;
+	}
+
+	public int getLongueurGrille() {
+		return longueurGrille;
+	}
+
 	private int longueurGrille;
 	private int nombreObstacle;
 	private int nbrHumainClassique;
@@ -275,6 +283,11 @@ public class Donjon {
 	public void jouer() {
 		
 		plateauJeu.rafraichir();
+		
+		for (ElementsMobile a : this.mobile) {
+			this.plateauJeu.placerElement(a);
+			a.bouger();
+		}
 	}
 	
 	

@@ -65,20 +65,25 @@ public abstract class ElementsMobile {
 	
 	public int modifierX()
 	{// modifie la valeur de x pour permettre un deplacement vers la droite ou la gauche
+		
 		switch(this.direction)
 		{
 		case est:
-			if(this.x <99)
+			if(this.x <donjon.getLongueurGrille())
 			{
+				
 				return this.x +1;
 			}
 		case ouest :
 			if(this.x>0)
 			{
+				
 				return this.x -1;
+				
 			}
 			
 		default :
+			
 		return this.x;		
 		} 
 
@@ -86,20 +91,27 @@ public abstract class ElementsMobile {
 	}
 	public int modifierY()
 	{// modifie la valeur de y pour permettre un deplacement vers le haut ou le bas
+		
 		switch(this.direction)
 		{
+		
 		case nord:
-			if(this.y <99)
+			if(this.y < donjon.getLargeurGrille())
 			{
+				
 				return this.y +1;
 			}
 		case sud :
+			
 			if(this.y>0)
 			{
+				
 				return this.y -1;
 			}
 			
 		default :
+			
+			
 		return this.y;		
 		}
 		
@@ -113,13 +125,15 @@ public abstract class ElementsMobile {
 	}
 	
 	
-	abstract protected void bouger();
+	abstract public void bouger();
 	
 	protected void avancer(int move)
 	{
+		
 		int i;
 		for( i=0; i<move; i++ )
 		{
+			
 			modifierX();
 			modifierY();
 		}

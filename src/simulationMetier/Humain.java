@@ -18,7 +18,7 @@ public class Humain extends ElementsMobile {
 		setImage(img);
 	}
 	
-	protected void bouger() {
+	public void bouger() {
 		
 		
 	}
