@@ -85,7 +85,7 @@ public class Plateau {
 				it = mobile.listIterator();
 				while (it.hasNext() == true) {
 					ElementsMobile e = it.next();
-					
+					//System.out.println("Affichage : Monstre : "+ e.getX() + " " + e.getY());
 					if ((e.getX() == y) &&( e.getY() == x)) {
 						
 						contentpan.add(new JLabel(new ImageIcon(e.getImage())));

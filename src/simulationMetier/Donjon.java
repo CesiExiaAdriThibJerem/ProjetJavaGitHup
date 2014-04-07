@@ -285,8 +285,10 @@ public class Donjon {
 		plateauJeu.rafraichir();
 		
 		for (ElementsMobile a : this.mobile) {
-			this.plateauJeu.placerElement(a);
+			//System.out.println("Monstre : " + a.getX() +" " + a.getY());
 			a.bouger();
+			//System.out.println("Monstre : " + a.getX() +" " + a.getY());
+			this.plateauJeu.placerElement(a);
 		}
 	}
 	

@@ -46,6 +46,7 @@ public class Monstre extends ElementsMobile
 		hp=hp-1;
 		
 		
+		
 	}
 	public int getHp()
 	{

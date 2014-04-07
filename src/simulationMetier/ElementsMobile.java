@@ -74,6 +74,7 @@ public abstract class ElementsMobile {
 				
 				return this.x +1;
 			}
+			break;
 		case ouest :
 			if(this.x>0)
 			{
@@ -81,11 +82,12 @@ public abstract class ElementsMobile {
 				return this.x -1;
 				
 			}
-			
+			break;
 		default :
 			
 		return this.x;		
-		} 
+		}
+		return 0; 
 
 		
 	}
@@ -99,21 +101,24 @@ public abstract class ElementsMobile {
 			if(this.y < donjon.getLargeurGrille())
 			{
 				
-				return this.y +1;
+				return this.y -1;
 			}
+			break;
 		case sud :
 			
 			if(this.y>0)
 			{
 				
-				return this.y -1;
+				return this.y +1;
 			}
+			break;
 			
 		default :
 			
 			
 		return this.y;		
 		}
+		return 0;
 		
 	}
 	public void setX(final int x) {
