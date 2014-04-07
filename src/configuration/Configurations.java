@@ -1,5 +1,9 @@
 package configuration;
 
+import java.util.ArrayList;
+
+import simulationMetier.ElementsMobile;
+
 public class Configurations {
 	private static int grilleX;
 	private static int grilleY;
@@ -8,6 +12,8 @@ public class Configurations {
 	private static int nbrHumainsEclaireur;
 	private static int nbrHumainsTeleport;
 	private static int nbrHumainsBuffer;
+	
+	public static ArrayList<ElementsMobile> MOBILE = new ArrayList<>();
 	
 	private static boolean valide = false;
 	

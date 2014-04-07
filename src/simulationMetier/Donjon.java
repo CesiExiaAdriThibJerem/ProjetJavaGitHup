@@ -3,6 +3,7 @@ package simulationMetier;
 import java.util.ArrayList;
 import java.util.Random;
 
+import configuration.Configurations;
 import simulationInterface.Plateau;
 
 public class Donjon {
@@ -26,7 +27,8 @@ public class Donjon {
 	private Random hasard;
 	
 	private Plateau plateauJeu;
-	private ArrayList<ElementsMobile> mobile = new ArrayList<>();
+	
+	public static ArrayList<ElementsMobile> mobile = new ArrayList<>();
 	
 	
 
@@ -141,6 +143,7 @@ public class Donjon {
 			this.mobile.add(monstre);
 			this.placerUnElementMobileAuHasard(monstre);
 			this.plateauJeu.placerElement(monstre);
+			
 			//LePlacer sur le plateau		
 		
 	}
@@ -148,7 +151,7 @@ public class Donjon {
 
 	public Case getPosition(int x, int y)
 	{
-		return this.cases[x][y];
+		return this.cases[y][x];
 	}
 	//Methode permettant de choisir aléatoirement un des 3 sols
 	private Case construireUnSol()
@@ -230,7 +233,6 @@ public class Donjon {
 			this.placerUnElementMobileAuHasard(e);
 			this.plateauJeu.placerElement(e);
 			
-			
 		}
 	}
 	
@@ -246,7 +248,6 @@ public class Donjon {
 			this.placerUnElementMobileAuHasard(e);
 			this.plateauJeu.placerElement(e);
 			
-			
 		}
 	}
 	private void placerLesEclaireur()
@@ -261,7 +262,6 @@ public class Donjon {
 			this.placerUnElementMobileAuHasard(e);
 			this.plateauJeu.placerElement(e);
 			
-			
 		}
 	}
 	private void placerLesTeleports()
@@ -275,7 +275,6 @@ public class Donjon {
 			this.mobile.add(e);
 			this.placerUnElementMobileAuHasard(e);
 			this.plateauJeu.placerElement(e);
-			
 			
 		}
 	}
