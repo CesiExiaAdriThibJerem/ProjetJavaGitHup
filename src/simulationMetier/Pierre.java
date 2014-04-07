@@ -6,6 +6,7 @@ public class Pierre extends ElementsMobile {
 	
 	Pierre()
 	{
+		setImage("pierre.png");
 		this.deplacement=0;
 		this.vision=0;
 	}
