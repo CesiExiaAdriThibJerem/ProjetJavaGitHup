@@ -45,6 +45,7 @@ public class Monstre extends ElementsMobile
 			}
 			}
 			else {
+				System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 					
@@ -69,6 +70,7 @@ public class Monstre extends ElementsMobile
 				setX(getX() + 1);
 			}
 			else {
+				System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 					
@@ -104,6 +106,7 @@ public class Monstre extends ElementsMobile
 			}
 			}
 			else {
+				System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 					
@@ -126,6 +129,7 @@ public class Monstre extends ElementsMobile
 				setY(getY()+1);
 			}
 			else {
+				System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 					
@@ -157,7 +161,9 @@ public class Monstre extends ElementsMobile
 					direction = sud;
 					
 				}
+			}
 				else {
+					System.out.println(e.getNomE());
 					if (e.getNomE().equals("Pierre")) {
 						direction = est;
 						
@@ -174,7 +180,7 @@ public class Monstre extends ElementsMobile
 				}
 			}
 			
-		}
+		
 		else if (this.donjon.getPosition(getX() - 1, getY()).estVide() && direction == nord) {
 			e = donjon.getElementMobile(getX()-1, getY());
 			
@@ -182,6 +188,7 @@ public class Monstre extends ElementsMobile
 				setX(getX()-1);
 			}
 			else {
+				System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 					
@@ -215,6 +222,7 @@ public class Monstre extends ElementsMobile
 			}
 			}
 			else {
+				System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 					
@@ -237,6 +245,7 @@ public class Monstre extends ElementsMobile
 				setY(getY()-1);
 			}
 			else {
+				System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 					

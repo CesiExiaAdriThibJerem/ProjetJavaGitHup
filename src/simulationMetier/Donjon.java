@@ -87,7 +87,7 @@ public class Donjon {
 				}
 				
 				//Placer les tours de façon aléatoire
-				else if (hasard.nextInt(10)==0)
+				else if (hasard.nextInt(20)==0)
 				{
 					unecase = new Tour();
 				}
@@ -295,6 +295,7 @@ public class Donjon {
 	public ElementsMobile getElementMobile(int x, int y) {
 		for (ElementsMobile e : this.mobile) {
 			if (e != null) {
+				
 				if ( (e.getX() == x) && (e.getY() == y) ) {
 					return e;
 				}

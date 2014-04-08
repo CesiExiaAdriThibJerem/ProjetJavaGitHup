@@ -24,7 +24,7 @@ public abstract class ElementsMobile {
 	protected int x;
 	protected int y;
 	
-	protected String nomE;
+	protected String nomE = "Humain";
 	
 	public String getNomE() {
 		return nomE;
