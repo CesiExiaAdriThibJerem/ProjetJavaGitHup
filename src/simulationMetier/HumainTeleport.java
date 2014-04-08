@@ -79,7 +79,7 @@ public class HumainTeleport extends ElementsMobile {
 						direction = random.nextInt(4); 				
 						
 					}
-					else if (this.donjon.getPosition(getX() + 2, getY()).estVide() && direction == sud )  
+					else if (this.donjon.getPosition(getX() + 2, getY()).estVide() && direction == sud && this.donjon.getPosition(getX()+1, getY()).estVide())  
 					{
 						if ((getX()+2 < Configurations.getGrilleX())&& (getX()+2 > 0)) {
 							setX(getX() + 2);
@@ -93,7 +93,7 @@ public class HumainTeleport extends ElementsMobile {
 						random.nextInt(4);				
 						
 					}
-					else if (this.donjon.getPosition(getX(), getY() + 2).estVide() && direction == est ) {
+					else if (this.donjon.getPosition(getX(), getY() + 2).estVide() && direction == est && this.donjon.getPosition(getX(), getY()+1).estVide()) {
 						if ((getY()+2 < Configurations.getGrilleY())&& (getY()+2 > 0)) {
 							setY(getY()+2);
 						}
@@ -106,7 +106,7 @@ public class HumainTeleport extends ElementsMobile {
 							
 						}
 					
-					else if (this.donjon.getPosition(getX() - 2, getY()).estVide() && direction == nord ) {
+					else if (this.donjon.getPosition(getX() - 2, getY()).estVide() && direction == nord && this.donjon.getPosition(getX()-1, getY()).estVide()) {
 						if ((getX()-2 < Configurations.getGrilleX())&& (getX()-2 > 0)) {
 							setX(getX()-2);
 						}
@@ -118,7 +118,7 @@ public class HumainTeleport extends ElementsMobile {
 						random.nextInt(4);
 							
 									}
-					else if (this.donjon.getPosition(getX(), getY()-2).estVide() && direction == ouest  ) {
+					else if (this.donjon.getPosition(getX(), getY()-2).estVide() && direction == ouest  && this.donjon.getPosition(getX(), getY()-1).estVide()) {
 						if ((getY()-2 < Configurations.getGrilleX())&& (getY()-2 > 0)) {
 							setY(getY()-2);
 						}
@@ -134,7 +134,7 @@ public class HumainTeleport extends ElementsMobile {
 						direction = random.nextInt(4); 				
 						
 					}
-					else if (this.donjon.getPosition(getX() + 3, getY()).estVide() && direction == sud )  
+					else if (this.donjon.getPosition(getX() + 3, getY()).estVide() && direction == sud && this.donjon.getPosition(getX()+2, getY()).estVide()  && this.donjon.getPosition(getX()+1, getY()).estVide())  
 					{
 						if ((getX()+3 < Configurations.getGrilleX())&& (getY()+3 > 0)) {
 							setX(getX() + 3);
@@ -147,7 +147,7 @@ public class HumainTeleport extends ElementsMobile {
 						random.nextInt(4);				
 						
 					}
-					else if (this.donjon.getPosition(getX(), getY() + 3).estVide() && direction == est ) {
+					else if (this.donjon.getPosition(getX(), getY() + 3).estVide() && direction == est && this.donjon.getPosition(getX(), getY()+2).estVide()&& this.donjon.getPosition(getX(), getY()+1).estVide()) {
 						if ((getY()+3 < Configurations.getGrilleX())&& (getY()+3 > 0)) {
 							setY(getY()+3);
 						}
@@ -160,7 +160,7 @@ public class HumainTeleport extends ElementsMobile {
 							
 						}
 					
-					else if (this.donjon.getPosition(getX() - 3, getY()).estVide() && direction == nord ) {
+					else if (this.donjon.getPosition(getX() - 3, getY()).estVide() && direction == nord && this.donjon.getPosition(getX()-2, getY()).estVide() && this.donjon.getPosition(getX()-1, getY()).estVide()) {
 						if ((getX()-3 < Configurations.getGrilleX())&& (getX()-3 > 0))
 						setX(getX()-3);
 					}
@@ -170,10 +170,10 @@ public class HumainTeleport extends ElementsMobile {
 						random.nextInt(4);
 							
 									}
-					else if (this.donjon.getPosition(getX(), getY()-3).estVide() && direction == ouest  ) {
-						if ((getY()-3 < Configurations.getGrilleX())&& (getY()-3 > 0)) {
+					else if (this.donjon.getPosition(getX(), getY()-3).estVide() && direction == ouest  && this.donjon.getPosition(getX(), getY()-2).estVide()&& this.donjon.getPosition(getX(), getY()-1).estVide()) {
+						
 							setY(getY()-3);
-						}
+						
 						
 					}
 					break;
