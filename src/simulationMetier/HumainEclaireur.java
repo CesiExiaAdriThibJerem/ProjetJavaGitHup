@@ -16,8 +16,7 @@ public class HumainEclaireur extends ElementsMobile  {
 	{
 		if(vivant=true)
 		{
-			modifierDirection();
-			avancer(deplacement);
+			
 		}
 		
 		

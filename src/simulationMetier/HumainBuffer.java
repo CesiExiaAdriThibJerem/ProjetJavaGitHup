@@ -16,8 +16,7 @@ public class HumainBuffer extends ElementsMobile {
 	{
 		if(vivant=true)
 		{
-			modifierDirection();
-			avancer(deplacement);	
+				
 		}
 		
 	}

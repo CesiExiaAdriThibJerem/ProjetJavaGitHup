@@ -82,14 +82,7 @@ public abstract class ElementsMobile {
 	abstract public void bouger();
 	
 	
-	public void droiteSud(int x, int y) {
-		setX(x + 1);
-		setY(y);
-	}
-	public void devantSud(int x, int y) {
-		setX(x);
-		setY(y + 1);
-	}
+	
 
 
 

@@ -22,12 +22,15 @@ public class Monstre extends ElementsMobile
 	
 	public void bouger()
 	{		
-		//System.out.println("Monstre : " + getX() + " " + getY());
 		
 		
-		if (!this.donjon.getPosition(getX() + 1, getY()).estVide() && direction == sud) {
+		
+		if (!this.donjon.getPosition(getX() + 1, getY()).estVide() && direction == sud ) {
 			
-			//setY(getY()+1);
+			ElementsMobile  e = donjon.getElementMobile(getX()+1, getY());
+			
+			if (e == null) {
+				
 			direction = est;
 			
 			compteurObstacle ++ ;
@@ -35,21 +38,34 @@ public class Monstre extends ElementsMobile
 			if (compteurObstacle == 6)
 			{
 				compteurObstacle = 0 ;
-				//setX(getX() - 1);
-				//setY(getY()-1);
+				
 				direction = nord;
 				
 			}
+			}
+			else {
+				
+			}
+			
 		}
 		else if (this.donjon.getPosition(getX() + 1, getY()).estVide() && direction == sud)  
 		{
+			ElementsMobile  e = donjon.getElementMobile(getX()+1, getY());
 			
-			setX(getX() + 1);
+			if (e == null) {
+				setX(getX() + 1);
+			}
+			else {
+				
+			}
 			
 		}
 		else if (!this.donjon.getPosition(getX(), getY() + 1).estVide() && direction == est) {
 			
-			//setX(getX() - 1);
+			ElementsMobile  e = donjon.getElementMobile(getX(), getY()+1);
+			
+			if (e == null) {
+				
 			direction = nord;
 			
 			compteurObstacle ++ ;
@@ -57,39 +73,62 @@ public class Monstre extends ElementsMobile
 			if (compteurObstacle == 6)
 			{
 				compteurObstacle = 0 ;
-				//setY(getY() - 1);
-				//setX(getX() + 1);
+				
 				direction = ouest;
 				
 			}
+			}
+			else {
+				
+			}
+			
 		}
 		else if (this.donjon.getPosition(getX(), getY() + 1).estVide() && direction == est) {
-			setY(getY()+1);
-		}
-		
-		else if (!this.donjon.getPosition(getX() - 1, getY()).estVide() && direction == nord) {
-			
-			//setY(getY() - 1);
-			direction = ouest;
-			
-			compteurObstacle ++ ;
-			
-			if (compteurObstacle == 6)
-			{
-				compteurObstacle = 0 ;
-				//setX(getX() +1);
-				//setY(getY() + 1);
-				direction = sud;
+			ElementsMobile  e = donjon.getElementMobile(getX(), getY()+1);
+			if (e == null) {
+				setY(getY()+1);
+			}
+			else {
 				
 			}
 		}
+		
+		else if (!this.donjon.getPosition(getX() - 1, getY()).estVide() && direction == nord) {
+			ElementsMobile  e = donjon.getElementMobile(getX()-1, getY());
+			if (e==null) {
+				
+				direction = ouest;
+				
+				compteurObstacle ++ ;
+				
+				if (compteurObstacle == 6)
+				{
+					compteurObstacle = 0 ;
+				
+					direction = sud;
+					
+				}
+				else {
+					
+				}
+			}
+			
+		}
 		else if (this.donjon.getPosition(getX() - 1, getY()).estVide() && direction == nord) {
-			setX(getX()-1);
+			ElementsMobile  e = donjon.getElementMobile(getX()-1, getY());
+			
+			if (e==null) {
+				setX(getX()-1);
+			}
+			else {
+				
+			}
 		}
 		
 		else if (!this.donjon.getPosition(getX(), getY()-1).estVide() && direction == ouest) {
-			
-			//setX(getX() +1);
+			ElementsMobile  e = donjon.getElementMobile(getX(), getY()-1);
+			if (e == null) {
+				
 			direction = sud;
 			
 			compteurObstacle ++ ;
@@ -97,14 +136,24 @@ public class Monstre extends ElementsMobile
 			if (compteurObstacle == 6)
 			{
 				compteurObstacle = 0 ;
-				//setY(getY()+1);
-				//setX(getX() -1);
+				
 				direction = est;
 				
 			}
+			}
+			else {
+				
+			}
+			
 		}
 		else if (this.donjon.getPosition(getX(), getY()-1).estVide() && direction == ouest) {
-			setY(getY()-1);
+			ElementsMobile  e = donjon.getElementMobile(getX(), getY()-1);
+			if (e== null) {
+				setY(getY()-1);
+			}
+			else {
+				
+			}
 		}
 		hp = hp -1;
 		System.out.println(getHp());

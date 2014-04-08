@@ -17,8 +17,7 @@ public class HumainClassique extends ElementsMobile {
 	{
 		if(vivant=true)
 		{
-			modifierDirection();
-			avancer(deplacement);	
+			
 		}
 		
 	}
