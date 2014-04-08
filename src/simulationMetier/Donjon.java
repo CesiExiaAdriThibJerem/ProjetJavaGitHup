@@ -242,7 +242,7 @@ public class Donjon {
 		HumainClassique e;
 		
 		//Recupere le nombre d'objet à placer et increment en fonction
-		for (int i = 0; i < this.nbrHumainBuffer; i++)
+		for (int i = 0; i < this.nbrHumainClassique; i++)
 		{
 			e = new HumainClassique();
 			this.mobile.add(e);
@@ -256,7 +256,7 @@ public class Donjon {
 		HumainEclaireur e;
 		
 		//Recupere le nombre d'objet à placer et increment en fonction
-		for (int i = 0; i < this.nbrHumainBuffer; i++)
+		for (int i = 0; i < this.nbrHumainEclaireur; i++)
 		{
 			e = new HumainEclaireur();
 			this.mobile.add(e);
@@ -270,7 +270,7 @@ public class Donjon {
 		HumainTeleport e;
 		
 		//Recupere le nombre d'objet à placer et increment en fonction
-		for (int i = 0; i < this.nbrHumainBuffer; i++)
+		for (int i = 0; i < this.nbrHumainTeleport; i++)
 		{
 			e = new HumainTeleport();
 			this.mobile.add(e);
