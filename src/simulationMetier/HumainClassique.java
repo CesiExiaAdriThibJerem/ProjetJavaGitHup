@@ -15,12 +15,12 @@ public class HumainClassique extends ElementsMobile {
 		this.y=getY();
 	}
 	
-	public void bougerClassique() 
+	public void bouger() 
 	{
 		Random random = new Random();
 		if(vivant==true)
 		{
-<<<<<<< HEAD
+
 			direction= random.nextInt(4);
 			if (!this.donjon.getPosition(getX() + 1, getY()).estVide() && direction == sud ) {
 				
@@ -61,9 +61,7 @@ public class HumainClassique extends ElementsMobile {
 				setY(getY()-1);
 			}
 		
-=======
-			
->>>>>>> 88915d6257450564b13b76389675be3a2b1c15b5
+
 		}
 		
 	}
