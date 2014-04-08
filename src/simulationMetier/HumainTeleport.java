@@ -16,8 +16,7 @@ public class HumainTeleport extends ElementsMobile {
 	{
 		if(vivant=true)
 		{
-			modifierDirection();
-			avancer(deplacement);	
+				
 		}
 		
 	}

@@ -1,9 +1,10 @@
 package simulationMetier;
 
+
+
 import java.util.ArrayList;
 import java.util.Random;
 
-import configuration.Configurations;
 import simulationInterface.Plateau;
 
 public class Donjon {
@@ -28,7 +29,7 @@ public class Donjon {
 	
 	private Plateau plateauJeu;
 	
-	public static ArrayList<ElementsMobile> mobile = new ArrayList<>();
+	private ArrayList<ElementsMobile> mobile = new ArrayList<>();
 	
 	
 
@@ -291,7 +292,16 @@ public class Donjon {
 		}
 	}
 	
-	
+	public ElementsMobile getElementMobile(int x, int y) {
+		for (ElementsMobile e : this.mobile) {
+			if (e != null) {
+				if ( (e.getX() == x) && (e.getY() == y) ) {
+					return e;
+				}
+			}
+		}
+		return null;
+	}
 			
 		
 	}
