@@ -4,7 +4,7 @@ package simulationMetier;
 
 public class Monstre extends ElementsMobile
 {
-	private int hp;
+	public int hp;
 	private int compteurObstacle=0;
 	private boolean verif ;
 	private ElementsMobile  e;
@@ -262,6 +262,7 @@ public class Monstre extends ElementsMobile
 			}
 		}
 		hp = hp -1;
+		setPdvMonstre(this.hp);
 		System.out.println(getHp());
 		
 	}
