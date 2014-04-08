@@ -304,7 +304,7 @@ public class Donjon {
 		    if(hpMob==0)
 		    {
 		    	System.out.println("Mob Mort");
-		    	System.exit(1);
+		    	//System.exit(1);
 		    }
 			//System.out.println("Monstre : " + a.getX() +" " + a.getY());
 			this.plateauJeu.placerElement(a);

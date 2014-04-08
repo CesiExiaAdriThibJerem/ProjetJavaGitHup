@@ -4,7 +4,7 @@ package simulationMetier;
 
 public class Monstre extends ElementsMobile
 {
-	public int hp;
+	
 	private int compteurObstacle=0;
 	private boolean verif ;
 	private ElementsMobile  e;
@@ -15,7 +15,7 @@ public class Monstre extends ElementsMobile
 		this.direction=sud;
 		this.deplacement=1;
 		this.vision=1;
-		hp = 100;
+		this.hpMob = 100;
 		this.x = getX();
 		this.y = getY();
 	}
@@ -261,21 +261,21 @@ public class Monstre extends ElementsMobile
 				}
 			}
 		}
-		hp = hp -1;
-		setPdvMonstre(this.hp);
+		hpMob = hpMob -1;
+		setPdvMonstre(this.hpMob);
 		System.out.println(getHp());
 		
 	}
 	public int getHp()
 	{
-		return this.hp;
+		return this.hpMob;
 	}
 	
 	
 	void mangerHumain()
 	{
 		
-		hp=hp+20;
+		hpMob=hpMob+20;
 		
 	}
 
