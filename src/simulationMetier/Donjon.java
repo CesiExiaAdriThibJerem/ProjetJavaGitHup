@@ -5,6 +5,7 @@ package simulationMetier;
 import java.util.ArrayList;
 import java.util.Random;
 
+import configuration.Configurations;
 import simulationInterface.Plateau;
 
 public class Donjon {
@@ -152,7 +153,18 @@ public class Donjon {
 
 	public Case getPosition(int x, int y)
 	{
-		return this.cases[y][x];
+		System.out.println(Configurations.getGrilleX());
+		System.out.println(x +" "+ y);
+		if ((x >= Configurations.getGrilleX()-1 || x < 0) || (y >= Configurations.getGrilleX()-1 || y < 0)) {
+			System.out.print("faux");
+			return this.cases[0][0];
+			
+		}
+		else {
+			System.out.print("vrai");
+			return this.cases[y][x];
+		}
+		
 	}
 	//Methode permettant de choisir aléatoirement un des 3 sols
 	private Case construireUnSol()

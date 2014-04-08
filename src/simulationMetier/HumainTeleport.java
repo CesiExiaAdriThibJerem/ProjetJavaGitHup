@@ -162,7 +162,10 @@ public class HumainTeleport extends ElementsMobile {
 					
 					else if (this.donjon.getPosition(getX() - 3, getY()).estVide() && direction == nord && this.donjon.getPosition(getX()-2, getY()).estVide() && this.donjon.getPosition(getX()-1, getY()).estVide()) {
 						if ((getX()-3 < Configurations.getGrilleX())&& (getX()-3 > 0))
-						setX(getX()-3);
+						{
+							setX(getX()-3);
+						}
+						
 					}
 					
 					else if (!this.donjon.getPosition(getX(), getY()-3).estVide() && direction == ouest ) {
@@ -171,8 +174,10 @@ public class HumainTeleport extends ElementsMobile {
 							
 									}
 					else if (this.donjon.getPosition(getX(), getY()-3).estVide() && direction == ouest  && this.donjon.getPosition(getX(), getY()-2).estVide()&& this.donjon.getPosition(getX(), getY()-1).estVide()) {
-						
+						if ((getX()-3 < Configurations.getGrilleX())&& (getX()-3 > 0)) {
 							setY(getY()-3);
+						}
+							
 						
 						
 					}
