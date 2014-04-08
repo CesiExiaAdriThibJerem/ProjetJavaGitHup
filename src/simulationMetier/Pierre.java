@@ -9,6 +9,7 @@ public class Pierre extends ElementsMobile {
 		setImage("pierre.png");
 		this.deplacement=0;
 		this.vision=0;
+		this.nomE = "Pierre";
 	}
 
 	@Override

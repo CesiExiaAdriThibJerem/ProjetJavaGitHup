@@ -24,8 +24,15 @@ public abstract class ElementsMobile {
 	protected int x;
 	protected int y;
 	
+	protected String nomE;
 	
-	
+	public String getNomE() {
+		return nomE;
+	}
+
+
+
+
 	private Image img;
 
 	

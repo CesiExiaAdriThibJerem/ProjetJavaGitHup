@@ -7,6 +7,7 @@ public class Monstre extends ElementsMobile
 	private int hp;
 	private int compteurObstacle=0;
 	private boolean verif ;
+	private ElementsMobile  e;
 	Monstre(Donjon donjon)
 	{
 		this.donjon = donjon;
@@ -27,7 +28,7 @@ public class Monstre extends ElementsMobile
 		
 		if (!this.donjon.getPosition(getX() + 1, getY()).estVide() && direction == sud ) {
 			
-			ElementsMobile  e = donjon.getElementMobile(getX()+1, getY());
+			e = donjon.getElementMobile(getX()+1, getY());
 			
 			if (e == null) {
 				
@@ -44,25 +45,49 @@ public class Monstre extends ElementsMobile
 			}
 			}
 			else {
-				
+				if (e.getNomE().equals("Pierre")) {
+					direction = est;
+					
+					compteurObstacle ++ ;
+					
+					if (compteurObstacle == 6)
+					{
+						compteurObstacle = 0 ;
+						
+						direction = nord;
+						
+					}
+				}
 			}
 			
 		}
 		else if (this.donjon.getPosition(getX() + 1, getY()).estVide() && direction == sud)  
 		{
-			ElementsMobile  e = donjon.getElementMobile(getX()+1, getY());
+			e = donjon.getElementMobile(getX()+1, getY());
 			
 			if (e == null) {
 				setX(getX() + 1);
 			}
 			else {
-				
+				if (e.getNomE().equals("Pierre")) {
+					direction = est;
+					
+					compteurObstacle ++ ;
+					
+					if (compteurObstacle == 6)
+					{
+						compteurObstacle = 0 ;
+						
+						direction = nord;
+						
+					}
+				}
 			}
 			
 		}
 		else if (!this.donjon.getPosition(getX(), getY() + 1).estVide() && direction == est) {
 			
-			ElementsMobile  e = donjon.getElementMobile(getX(), getY()+1);
+			e = donjon.getElementMobile(getX(), getY()+1);
 			
 			if (e == null) {
 				
@@ -79,22 +104,46 @@ public class Monstre extends ElementsMobile
 			}
 			}
 			else {
-				
+				if (e.getNomE().equals("Pierre")) {
+					direction = est;
+					
+					compteurObstacle ++ ;
+					
+					if (compteurObstacle == 6)
+					{
+						compteurObstacle = 0 ;
+						
+						direction = nord;
+						
+					}
+				}
 			}
 			
 		}
 		else if (this.donjon.getPosition(getX(), getY() + 1).estVide() && direction == est) {
-			ElementsMobile  e = donjon.getElementMobile(getX(), getY()+1);
+			e = donjon.getElementMobile(getX(), getY()+1);
 			if (e == null) {
 				setY(getY()+1);
 			}
 			else {
-				
+				if (e.getNomE().equals("Pierre")) {
+					direction = est;
+					
+					compteurObstacle ++ ;
+					
+					if (compteurObstacle == 6)
+					{
+						compteurObstacle = 0 ;
+						
+						direction = nord;
+						
+					}
+				}
 			}
 		}
 		
 		else if (!this.donjon.getPosition(getX() - 1, getY()).estVide() && direction == nord) {
-			ElementsMobile  e = donjon.getElementMobile(getX()-1, getY());
+			e = donjon.getElementMobile(getX()-1, getY());
 			if (e==null) {
 				
 				direction = ouest;
@@ -109,24 +158,48 @@ public class Monstre extends ElementsMobile
 					
 				}
 				else {
-					
+					if (e.getNomE().equals("Pierre")) {
+						direction = est;
+						
+						compteurObstacle ++ ;
+						
+						if (compteurObstacle == 6)
+						{
+							compteurObstacle = 0 ;
+							
+							direction = nord;
+							
+						}
+					}
 				}
 			}
 			
 		}
 		else if (this.donjon.getPosition(getX() - 1, getY()).estVide() && direction == nord) {
-			ElementsMobile  e = donjon.getElementMobile(getX()-1, getY());
+			e = donjon.getElementMobile(getX()-1, getY());
 			
 			if (e==null) {
 				setX(getX()-1);
 			}
 			else {
-				
+				if (e.getNomE().equals("Pierre")) {
+					direction = est;
+					
+					compteurObstacle ++ ;
+					
+					if (compteurObstacle == 6)
+					{
+						compteurObstacle = 0 ;
+						
+						direction = nord;
+						
+					}
+				}
 			}
 		}
 		
 		else if (!this.donjon.getPosition(getX(), getY()-1).estVide() && direction == ouest) {
-			ElementsMobile  e = donjon.getElementMobile(getX(), getY()-1);
+			e = donjon.getElementMobile(getX(), getY()-1);
 			if (e == null) {
 				
 			direction = sud;
@@ -142,17 +215,41 @@ public class Monstre extends ElementsMobile
 			}
 			}
 			else {
-				
+				if (e.getNomE().equals("Pierre")) {
+					direction = est;
+					
+					compteurObstacle ++ ;
+					
+					if (compteurObstacle == 6)
+					{
+						compteurObstacle = 0 ;
+						
+						direction = nord;
+						
+					}
+				}
 			}
 			
 		}
 		else if (this.donjon.getPosition(getX(), getY()-1).estVide() && direction == ouest) {
-			ElementsMobile  e = donjon.getElementMobile(getX(), getY()-1);
+			e = donjon.getElementMobile(getX(), getY()-1);
 			if (e== null) {
 				setY(getY()-1);
 			}
 			else {
-				
+				if (e.getNomE().equals("Pierre")) {
+					direction = est;
+					
+					compteurObstacle ++ ;
+					
+					if (compteurObstacle == 6)
+					{
+						compteurObstacle = 0 ;
+						
+						direction = nord;
+						
+					}
+				}
 			}
 		}
 		hp = hp -1;
