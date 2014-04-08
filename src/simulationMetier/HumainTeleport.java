@@ -20,6 +20,7 @@ public class HumainTeleport extends ElementsMobile {
 	
 	public void bouger()
 	{
+		if (mort == false) {
 		Random random = new Random();
 		
 		int caseDeplacement = random.nextInt(3);
@@ -295,7 +296,7 @@ public class HumainTeleport extends ElementsMobile {
 					break;
 			}
 		
-						
+		}				
 		}
 		
 	

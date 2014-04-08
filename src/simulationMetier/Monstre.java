@@ -59,6 +59,12 @@ public class Monstre extends ElementsMobile
 						
 					}
 				}
+				else {
+					e.mourir();
+					hpMob = hpMob + 20;
+					
+					setX(getX() + 1);
+				}
 			}
 			
 		}
@@ -83,6 +89,12 @@ public class Monstre extends ElementsMobile
 						direction = nord;
 						
 					}
+					
+				}
+				else {
+					e.mourir();
+					hpMob = hpMob + 20;
+					setX(getX() + 1);
 				}
 			}
 			
@@ -120,6 +132,12 @@ public class Monstre extends ElementsMobile
 						
 					}
 				}
+				else {
+					e.mourir();
+					hpMob = hpMob + 20;
+					
+					setY(getY()+1);
+				}
 			}
 			
 		}
@@ -142,6 +160,11 @@ public class Monstre extends ElementsMobile
 						direction = nord;
 						
 					}
+				}
+				else {
+					e.mourir();
+					hpMob = hpMob + 20;
+					setY(getY()+1);
 				}
 			}
 		}
@@ -177,6 +200,11 @@ public class Monstre extends ElementsMobile
 							
 						}
 					}
+					else {
+						e.mourir();
+						hpMob = hpMob + 20;
+						setX(getX()-1);
+					}
 				}
 			}
 			
@@ -201,6 +229,11 @@ public class Monstre extends ElementsMobile
 						direction = nord;
 						
 					}
+				}
+				else {
+					e.mourir();
+					hpMob = hpMob + 20;
+					setX(getX()-1);
 				}
 			}
 		}
@@ -236,6 +269,11 @@ public class Monstre extends ElementsMobile
 						
 					}
 				}
+				else {
+					e.mourir();
+					hpMob = hpMob + 20;
+					setY(getY()-1);
+				}
 			}
 			
 		}
@@ -258,6 +296,11 @@ public class Monstre extends ElementsMobile
 						direction = nord;
 						
 					}
+				}
+				else {
+					e.mourir();
+					hpMob = hpMob + 20;
+					setY(getY()-1);
 				}
 			}
 		}

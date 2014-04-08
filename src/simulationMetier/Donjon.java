@@ -294,8 +294,8 @@ public class Donjon {
 	
 	public void jouer() {
 		
-		plateauJeu.rafraichir();
 		
+		plateauJeu.rafraichir();
 		for (ElementsMobile a : this.mobile) {
 			//System.out.println("Monstre : " + a.getX() +" " + a.getY());
 			
@@ -304,11 +304,15 @@ public class Donjon {
 		    if(hpMob==0)
 		    {
 		    	System.out.println("Mob Mort");
-		    	//System.exit(1);
+		    	//System.exit(0);
 		    }
-			//System.out.println("Monstre : " + a.getX() +" " + a.getY());
-			this.plateauJeu.placerElement(a);
+		    if (!a.isMort()) {
+		    	this.plateauJeu.placerElement(a);
+		    }
+			
+			
 		}
+		
 	}
 	
 	public ElementsMobile getElementMobile(int x, int y) {

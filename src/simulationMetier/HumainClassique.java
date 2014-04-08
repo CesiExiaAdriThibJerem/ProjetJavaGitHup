@@ -18,6 +18,7 @@ public class HumainClassique extends ElementsMobile {
 	
 	public void bouger() 
 	{
+		if (mort == false) {
 		Random random = new Random();
 		if(vivant==true)
 		{
@@ -102,7 +103,7 @@ public class HumainClassique extends ElementsMobile {
 					}
 			}
 		
-
+		}
 		}
 		
 	}

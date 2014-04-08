@@ -25,6 +25,15 @@ public abstract class ElementsMobile {
 	protected int y;
 	protected int hpMob;
 	
+	protected boolean mort = false;
+	
+	public boolean isMort() {
+		return mort;
+	}
+
+
+
+
 	protected String nomE = "Humain";
 	
 	public String getNomE() {
@@ -49,13 +58,13 @@ public abstract class ElementsMobile {
 	{
 		try {
 					
-					
+				
 				this.img = ImageIO.read(new File("image/"+image));
 					
 			} catch (Exception e) 
 				
 			{
-				System.out.print("impossible d'afficher l'image: "+ image);
+				System.out.println("impossible d'afficher l'image: "+ image);
 					
 					
 			}
@@ -107,5 +116,9 @@ public abstract class ElementsMobile {
 	public void setDirection(int direction) {
 		this.direction = direction;
 	}
-
+	
+	public void mourir() {
+		setImage("sol1.png");
+		this.mort = true;
+	}
 }
