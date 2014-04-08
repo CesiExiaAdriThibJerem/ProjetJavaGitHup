@@ -23,6 +23,7 @@ public abstract class ElementsMobile {
 	protected Donjon donjon;
 	protected int x;
 	protected int y;
+	protected int hpMob;
 	
 	protected String nomE = "Humain";
 	
@@ -71,6 +72,15 @@ public abstract class ElementsMobile {
 	{
 
 		return this.y;//permet de connaitre la position y(ordonnée) d'un element
+	}
+	public void setPdvMonstre(int hpMob)
+	{
+		
+		 this.hpMob = hpMob;
+	}
+	public int getPdvMonstre()
+	{
+		return this.hpMob;
 	}
 	
 	

@@ -36,10 +36,19 @@ public class HumainClassique extends ElementsMobile {
 					setX(getX()+1);
 				}
 				else {
-					if (e.getNomE().equals("Humain")) {
+						if (e.getNomE().equals("Humain")) {
+									
+								direction = random.nextInt(4);
+								}
+						else if (e.getNomE().equals("Pierre"))
+						{
+							if(this.donjon.getPosition(getX()+2, getY()).estVide())
+							{
 								
-							direction = random.nextInt(4);
+								
 							}
+							
+						}
 					}
 				
 			}
