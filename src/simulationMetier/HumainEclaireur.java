@@ -1,7 +1,7 @@
 package simulationMetier;
 
 public class HumainEclaireur extends ElementsMobile  {
-	HumainEclaireur()
+	HumainEclaireur(Donjon donjon)
 	{
 		setImage("hommeeclaireur.png");
 		this.deplacement=1;
@@ -10,6 +10,7 @@ public class HumainEclaireur extends ElementsMobile  {
 		this.direction=sud;
 		this.x=getX();
 		this.y=getY();
+		this.donjon = donjon;
 	}
 	
 	public void bouger() 

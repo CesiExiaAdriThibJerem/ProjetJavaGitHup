@@ -229,7 +229,7 @@ public class Donjon {
 		//Recupere le nombre d'objet à placer et increment en fonction
 		for (int i = 0; i < this.nbrHumainBuffer; i++)
 		{
-			e = new HumainBuffer();
+			e = new HumainBuffer(this);
 			this.mobile.add(e);
 			this.placerUnElementMobileAuHasard(e);
 			this.plateauJeu.placerElement(e);
@@ -244,7 +244,7 @@ public class Donjon {
 		//Recupere le nombre d'objet à placer et increment en fonction
 		for (int i = 0; i < this.nbrHumainClassique; i++)
 		{
-			e = new HumainClassique();
+			e = new HumainClassique(this);
 			this.mobile.add(e);
 			this.placerUnElementMobileAuHasard(e);
 			this.plateauJeu.placerElement(e);
@@ -258,7 +258,7 @@ public class Donjon {
 		//Recupere le nombre d'objet à placer et increment en fonction
 		for (int i = 0; i < this.nbrHumainEclaireur; i++)
 		{
-			e = new HumainEclaireur();
+			e = new HumainEclaireur(this);
 			this.mobile.add(e);
 			this.placerUnElementMobileAuHasard(e);
 			this.plateauJeu.placerElement(e);
@@ -272,7 +272,7 @@ public class Donjon {
 		//Recupere le nombre d'objet à placer et increment en fonction
 		for (int i = 0; i < this.nbrHumainTeleport; i++)
 		{
-			e = new HumainTeleport();
+			e = new HumainTeleport(this);
 			this.mobile.add(e);
 			this.placerUnElementMobileAuHasard(e);
 			this.plateauJeu.placerElement(e);
