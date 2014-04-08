@@ -46,7 +46,7 @@ public class HumainClassique extends ElementsMobile {
 				
 				random.nextInt(4);
 					
-				}
+				
 			}
 			else if (this.donjon.getPosition(getX() - 1, getY()).estVide() && direction == nord ) {
 				setX(getX()-1);
@@ -65,6 +65,7 @@ public class HumainClassique extends ElementsMobile {
 		}
 		
 	}
+}
 
 	
 
