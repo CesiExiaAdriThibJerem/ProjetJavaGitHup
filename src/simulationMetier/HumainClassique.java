@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class HumainClassique extends ElementsMobile {
 	
-	HumainClassique()
+	HumainClassique(Donjon donjon)
 	{
 		setImage("hommeclassique.png");
 		this.deplacement=1;
@@ -13,6 +13,7 @@ public class HumainClassique extends ElementsMobile {
 		this.direction=sud;
 		this.x=getX();
 		this.y=getY();
+		this.donjon = donjon;
 	}
 	
 	public void bouger() 
@@ -45,6 +46,7 @@ public class HumainClassique extends ElementsMobile {
 			else if (!this.donjon.getPosition(getX() - 1, getY()).estVide() && direction == nord ) {
 				
 				random.nextInt(4);
+<<<<<<< HEAD
 					
 
 				}
@@ -53,6 +55,9 @@ public class HumainClassique extends ElementsMobile {
 					
 				
 
+=======
+			}	
+>>>>>>> 6526384787e82490da5c9418b7f901ec083ce0e6
 			else if (this.donjon.getPosition(getX() - 1, getY()).estVide() && direction == nord ) {
 				setX(getX()-1);
 			}
@@ -73,6 +78,10 @@ public class HumainClassique extends ElementsMobile {
 }
 	
 
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 6526384787e82490da5c9418b7f901ec083ce0e6
 
 
