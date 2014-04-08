@@ -86,13 +86,6 @@ public abstract class ElementsMobile {
 	}
 	
 	
-	abstract public void bouger();
-	
-	
-	
-
-
-
 
 	public int getDirection() {
 		return direction;
