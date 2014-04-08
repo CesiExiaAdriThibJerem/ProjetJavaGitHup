@@ -61,7 +61,7 @@ public abstract class ElementsMobile {
 	}
 	
 	
-	
+	public abstract void bouger();
 	
 	public int getX()
 	{
