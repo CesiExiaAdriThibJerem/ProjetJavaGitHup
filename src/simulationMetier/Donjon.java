@@ -305,7 +305,7 @@ public class Donjon {
 		    if(hpMob==0 )
 		    {
 		    	System.out.println("Mob Mort");
-		    	System.exit(0);
+		    	//System.exit(0);
 		    }
 		    
 		    if (!a.isMort()) {

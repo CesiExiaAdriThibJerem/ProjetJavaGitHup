@@ -13,9 +13,10 @@ public class Main {
 		while (Configurations.isValide() == false) {
 			System.out.print("");
 			}
+		int nbrTour = 0 ;
 		
-		AffichageStats fenStats = new AffichageStats();
 		Donjon monDonjon = new Donjon(Configurations.getGrilleX(), Configurations.getGrilleY(), Configurations.getNbrObstacle(), Configurations.getNbrHumainsClassique(), Configurations.getNbrHumainsEclaireur(), Configurations.getNbrHumainsTeleport(),Configurations.getNbrHumainsBuffer());
+		AffichageStats fenStats = new AffichageStats();
 		
 		long temps;
 		
@@ -28,9 +29,10 @@ public class Main {
 				e.printStackTrace();
 			}
 			
-			monDonjon.jouer();
-			fenStats.rafraichir();
 			
+			monDonjon.jouer();
+			fenStats.rafraichir(nbrTour);
+			nbrTour++;
 		}
 		
 

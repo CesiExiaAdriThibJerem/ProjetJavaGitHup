@@ -1,7 +1,12 @@
 package simulationInterface;
 
+import java.awt.GridLayout;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JSlider;
+
+import configuration.Configurations;
 
 @SuppressWarnings("serial")
 public class AffichageStats extends JFrame{
@@ -12,17 +17,56 @@ public class AffichageStats extends JFrame{
 	private JLabel nbrhumabuffer;
 	private JLabel tour;
 	
+	private long vitesse;
+	
 	public AffichageStats() {
+		this.nbrhumaclass = new JLabel();
+		this.nbrhumaeclair = new JLabel();
+		this.nbrhumateleport = new JLabel();
+		this.nbrhumabuffer = new JLabel();
+		
+		this.tour = new JLabel();
+		
+		this.nbrhumaclass.setText(Integer.toString(Configurations.getNbrHumainsClassique()));
+		this.nbrhumaeclair.setText(Integer.toString(Configurations.getNbrHumainsEclaireur()));
+		this.nbrhumateleport.setText(Integer.toString(Configurations.getNbrHumainsTeleport()));
+		this.nbrhumabuffer.setText(Integer.toString(Configurations.getNbrHumainsBuffer()));
+		
+		tour.setText("0");
+		
 		this.setTitle("Statistique");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setSize(300, 800);
+		this.setSize(300, 600);
+		
+		this.setLayout(new GridLayout(6,2));
+		
+		this.add(new JLabel("Nombre de tour : "));
+		this.add(tour);
+		
+		this.add(new JLabel("Nombre d'humains : "));
+		this.add(nbrhumaclass);
+		
+		this.add(new JLabel("Nombre d'éclaireur : "));
+		this.add(nbrhumaeclair);
+		
+		this.add(new JLabel("Nombre de teleporteur : "));
+		this.add(nbrhumateleport);
+		
+		this.add(new JLabel("Nombre de prêtre : "));
+		this.add(nbrhumabuffer);
+		
+		JSlider slide = new JSlider(0, 10000, 5000);
+		slide.setInverted(true);
+		slide.addChangeListener(new EvenementStats(this));
+		
+		this.add(slide);
 		
 		
 		this.setVisible(true);
 	}
 	
-	public void rafraichir() {
-		
+	public void rafraichir(int nbrTour) {
+		this.tour.setText(Integer.toString(nbrTour));
 	}
 
 	public JLabel getNbrhumaclass() {
@@ -43,5 +87,13 @@ public class AffichageStats extends JFrame{
 
 	public JLabel getTour() {
 		return tour;
+	}
+
+	public long getVitesse() {
+		return vitesse;
+	}
+
+	public void setVitesse(long vitesse) {
+		this.vitesse = vitesse;
 	}
 }
