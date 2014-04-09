@@ -1,6 +1,7 @@
 package configuration;
 
 
+import simulationInterface.AffichageStats;
 import simulationMetier.Donjon;
 
 public class Main {
@@ -13,6 +14,7 @@ public class Main {
 			System.out.print("");
 			}
 		
+		AffichageStats fenStats = new AffichageStats();
 		Donjon monDonjon = new Donjon(Configurations.getGrilleX(), Configurations.getGrilleY(), Configurations.getNbrObstacle(), Configurations.getNbrHumainsClassique(), Configurations.getNbrHumainsEclaireur(), Configurations.getNbrHumainsTeleport(),Configurations.getNbrHumainsBuffer());
 		
 		long temps;
@@ -27,7 +29,7 @@ public class Main {
 			}
 			
 			monDonjon.jouer();
-			
+			fenStats.rafraichir();
 			
 		}
 		
