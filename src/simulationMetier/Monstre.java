@@ -10,12 +10,13 @@ public class Monstre extends ElementsMobile
 	private ElementsMobile  e;
 	Monstre(Donjon donjon)
 	{
+		System.out.println("test");
 		this.donjon = donjon;
 		setImage("monstre.png");
 		this.direction=sud;
 		this.deplacement=1;
 		this.vision=1;
-		this.hpMob = 100;
+		setPdvMonstre(100); 
 		this.x = getX();
 		this.y = getY();
 	}
@@ -45,7 +46,7 @@ public class Monstre extends ElementsMobile
 			}
 			}
 			else {
-				System.out.println(e.getNomE());
+				//System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 					
@@ -76,7 +77,7 @@ public class Monstre extends ElementsMobile
 				setX(getX() + 1);
 			}
 			else {
-				System.out.println(e.getNomE());
+			//	System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 					
@@ -118,7 +119,7 @@ public class Monstre extends ElementsMobile
 			}
 			}
 			else {
-				System.out.println(e.getNomE());
+				//System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 					
@@ -147,7 +148,7 @@ public class Monstre extends ElementsMobile
 				setY(getY()+1);
 			}
 			else {
-				System.out.println(e.getNomE());
+				//System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 					
@@ -186,7 +187,7 @@ public class Monstre extends ElementsMobile
 				}
 			}
 				else {
-					System.out.println(e.getNomE());
+					//System.out.println(e.getNomE());
 					if (e.getNomE().equals("Pierre")) {
 						direction = est;
 						
@@ -216,7 +217,7 @@ public class Monstre extends ElementsMobile
 				setX(getX()-1);
 			}
 			else {
-				System.out.println(e.getNomE());
+				//System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 					
@@ -255,7 +256,7 @@ public class Monstre extends ElementsMobile
 			}
 			}
 			else {
-				System.out.println(e.getNomE());
+				//System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 					
@@ -283,7 +284,7 @@ public class Monstre extends ElementsMobile
 				setY(getY()-1);
 			}
 			else {
-				System.out.println(e.getNomE());
+			//	System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 					
@@ -306,13 +307,10 @@ public class Monstre extends ElementsMobile
 		}
 		hpMob = hpMob -1;
 		setPdvMonstre(this.hpMob);
-		System.out.println(getHp());
+		System.out.println(getPdvMonstre());
 		
 	}
-	public int getHp()
-	{
-		return this.hpMob;
-	}
+	
 	
 	
 	void mangerHumain()
