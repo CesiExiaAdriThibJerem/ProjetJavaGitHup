@@ -20,22 +20,20 @@ public class Main {
 		
 		long temps;
 		
-		
+		temps = System.currentTimeMillis();
 		for (;;) {
 			
-			temps = System.currentTimeMillis();
-			if (temps == temps + fenStats.getVitesse()) {
-				monDonjon.jouer();
+			
+				if(System.currentTimeMillis() - temps >= fenStats.getVitesse()) {
+					monDonjon.jouer();
 				fenStats.rafraichir(nbrTour);
 				nbrTour++;
-				
+				System.out.println(fenStats.getVitesse());			
 				temps = System.currentTimeMillis();
+				}
 				
-			}
-			else {
-				temps++;
-			}
-			
+				
+				
 		}
 		
 

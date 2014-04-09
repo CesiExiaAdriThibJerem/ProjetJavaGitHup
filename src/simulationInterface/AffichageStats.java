@@ -17,7 +17,7 @@ public class AffichageStats extends JFrame{
 	private JLabel nbrhumabuffer;
 	private JLabel tour;
 	
-	private long vitesse = 500;
+	private long vitesse = 300;
 	
 	public AffichageStats() {
 		this.nbrhumaclass = new JLabel();
@@ -55,7 +55,7 @@ public class AffichageStats extends JFrame{
 		this.add(new JLabel("Nombre de prêtre : "));
 		this.add(nbrhumabuffer);
 		
-		JSlider slide = new JSlider(0, 1000, 500);
+		JSlider slide = new JSlider(0, 600, 300);
 		slide.addChangeListener(new EvenementStats(this));
 		
 		this.add(slide);
