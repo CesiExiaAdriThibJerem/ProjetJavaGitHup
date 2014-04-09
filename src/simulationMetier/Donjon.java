@@ -153,15 +153,15 @@ public class Donjon {
 
 	public Case getPosition(int x, int y)
 	{
-		System.out.println(Configurations.getGrilleX());
-		System.out.println(x +" "+ y);
+		//System.out.println(Configurations.getGrilleX());
+	//	System.out.println(x +" "+ y);
 		if ((x >= Configurations.getGrilleX()-1 || x < 0) || (y >= Configurations.getGrilleX()-1 || y < 0)) {
-			System.out.print("faux");
+			//System.out.print("faux");
 			return this.cases[0][0];
 			
 		}
 		else {
-			System.out.print("vrai");
+			//System.out.print("vrai");
 			return this.cases[y][x];
 		}
 		
@@ -294,20 +294,23 @@ public class Donjon {
 	
 	public void jouer() {
 		
-		
 		plateauJeu.rafraichir();
 		for (ElementsMobile a : this.mobile) {
 			//System.out.println("Monstre : " + a.getX() +" " + a.getY());
 			
 			a.bouger();
+			
 		    int hpMob= a.getPdvMonstre();
-		    if(hpMob==0)
+		  
+		    if(hpMob==0 )
 		    {
 		    	System.out.println("Mob Mort");
-		    	//System.exit(0);
+		    	System.exit(0);
 		    }
+		    
 		    if (!a.isMort()) {
 		    	this.plateauJeu.placerElement(a);
+		   
 		    }
 			
 			
