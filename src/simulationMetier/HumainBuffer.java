@@ -5,6 +5,10 @@ import java.util.Random;
 public class HumainBuffer extends ElementsMobile {
 	private ElementsMobile e;
 	private ElementsMobile danger;
+	private ElementsMobile danger1;
+	private ElementsMobile danger2;
+	private ElementsMobile danger3;
+	private ElementsMobile danger4;
 	HumainBuffer(Donjon donjon)
 	{
 		setImage("hommebuufer.png");
@@ -122,8 +126,69 @@ public class HumainBuffer extends ElementsMobile {
 
 	public boolean detection()
 	{
+
+
+
 		//check si il y à un monstre au sud de sa position
-		danger = donjon.getElementMobile(getX()+1, getY());
+
+		if (donjon.getElementMobile(getX()+1, getY()) != null) {
+
+			if (donjon.getElementMobile(getX()+1, getY()).getNomE().equals("Monstre")) {
+
+				return true;
+			}
+			
+			else 
+			{
+				return false;
+			}
+
+		}
+		 if (donjon.getElementMobile(getX(), getY()+1) != null) {
+
+			if (donjon.getElementMobile(getX(), getY()+1).getNomE().equals("Monstre"))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+		}
+		 if (donjon.getElementMobile(getX()-1, getY())!= null)
+		{
+			if(donjon.getElementMobile(getX()-1, getY()).getNomE().equals("Monstre"))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		 if(donjon.getElementMobile(getX(), getY()-1) != null)
+		{
+			if(donjon.getElementMobile(getX(), getY()-1).getNomE().equals("Monstre"))
+			{
+				return true;
+			}
+			else 
+			{
+				return false;
+			}
+		}
+		else
+		{
+			return false;
+		}
+
+
+		/*
+		if (danger1!= null || danger2)
+		{
+
 		if (danger.getNomE().equals("Monstre"))
 		{
 			return true;
@@ -132,8 +197,10 @@ public class HumainBuffer extends ElementsMobile {
 		{
 			//a l'est
 			danger = donjon.getElementMobile(getX(), getY()+1);
+			if (danger != null)
+			{
 
-			if (danger.getNomE().equals("Monstre"))
+			if (danger.getNomE().equals("Monstre") )
 			{
 				return true; 
 			}
@@ -141,6 +208,8 @@ public class HumainBuffer extends ElementsMobile {
 			{
 				// au nord
 				danger = donjon.getElementMobile(getX()-1, getY());
+				if (danger != null)
+				{
 				if (danger.getNomE().equals("Monstre"))
 				{
 					return true;
@@ -148,6 +217,8 @@ public class HumainBuffer extends ElementsMobile {
 				else
 				{
 					// a l'ouest
+					if (danger != null)
+					{
 					danger = donjon.getElementMobile(getX(), getY()-1);
 					if (danger.getNomE().equals("Monstre"))
 					{
@@ -158,11 +229,16 @@ public class HumainBuffer extends ElementsMobile {
 						return false;
 					}
 				}
+				}
 			}
+			}
+		}
 		}
 
 
-
+	}
+		return false;*/
+		
 	}
 
 
