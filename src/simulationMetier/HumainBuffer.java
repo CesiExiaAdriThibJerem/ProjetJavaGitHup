@@ -1,6 +1,10 @@
 package simulationMetier;
 
+import java.util.Random;
+
 public class HumainBuffer extends ElementsMobile {
+	private ElementsMobile e;
+	private ElementsMobile danger;
 	HumainBuffer(Donjon donjon)
 	{
 		setImage("hommebuufer.png");
@@ -12,14 +16,157 @@ public class HumainBuffer extends ElementsMobile {
 		this.y=getY();
 		this.donjon = donjon;
 	}
-	
+
 	public void bouger() 
 	{
-		if(vivant=true)
+		//Si il y a un monstre lance la méthode bouger
+		if (detection() == true)
 		{
-				
+
+
+			if (mort == false) {
+				Random random = new Random();
+				if(vivant==true)
+				{
+
+					direction= random.nextInt(4);
+
+					if (!this.donjon.getPosition(getX() + 1, getY()).estVide() && direction == sud ) {
+
+						direction = random.nextInt(4); 				
+
+					}
+					else if (this.donjon.getPosition(getX() + 1, getY()).estVide() && direction == sud )  
+					{
+
+						e = donjon.getElementMobile(getX()+1, getY());
+						if (e == null) {
+							setX(getX()+1);
+						}
+						else {
+							if (e.getNomE().equals("Humain")) {
+
+								direction = random.nextInt(4);
+							}
+
+						}
+
+					}
+					else if (!this.donjon.getPosition(getX(), getY() + 1).estVide() && direction == est ) {
+
+						direction = random.nextInt(4);				
+
+					}
+					else if (this.donjon.getPosition(getX(), getY() + 1).estVide() && direction == est ) {
+						e = donjon.getElementMobile(getX(), getY()+1);
+						if (e == null) {
+							setY(getY()+1);
+						}
+						else {
+							if (e.getNomE().equals("Humain")) {
+
+								direction = random.nextInt(4);
+							}
+						}
+					}
+
+
+
+					else if (!this.donjon.getPosition(getX() - 1, getY()).estVide() && direction == nord ) {
+
+						direction = random.nextInt(4);			
+
+
+					}	
+
+					else if (this.donjon.getPosition(getX() - 1, getY()).estVide() && direction == nord ) {
+						e = donjon.getElementMobile(getX() -1, getY());
+						if (e == null) {
+							setX(getX()-1);
+						}
+						else {
+							if (e.getNomE().equals("Humain")) {
+
+								direction = random.nextInt(4);
+							}
+						}
+					}
+
+					else if (!this.donjon.getPosition(getX(), getY()-1).estVide() && direction == ouest ) {
+
+						direction = random.nextInt(4);
+
+					}
+					else if (this.donjon.getPosition(getX(), getY()-1).estVide() && direction == ouest  ) {
+						e = donjon.getElementMobile(getX(), getY()-1);
+						if (e == null) {
+							setY(getY()-1);
+						}
+						else {
+							if (e.getNomE().equals("Humain")) {
+
+								direction = random.nextInt(4);
+							}
+						}
+					}
+
+				}
+			}
 		}
-		
+		else
+		{
+			//ne rien faire
+		}
 	}
 
+
+	public boolean detection()
+	{
+		//check si il y à un monstre au sud de sa position
+		danger = donjon.getElementMobile(getX()+1, getY());
+		if (danger.getNomE().equals("Monstre"))
+		{
+			return true;
+		}
+		else 
+		{
+			//a l'est
+			danger = donjon.getElementMobile(getX(), getY()+1);
+
+			if (danger.getNomE().equals("Monstre"))
+			{
+				return true; 
+			}
+			else
+			{
+				// au nord
+				danger = donjon.getElementMobile(getX()-1, getY());
+				if (danger.getNomE().equals("Monstre"))
+				{
+					return true;
+				}
+				else
+				{
+					// a l'ouest
+					danger = donjon.getElementMobile(getX(), getY()-1);
+					if (danger.getNomE().equals("Monstre"))
+					{
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+				}
+			}
+		}
+
+
+
+	}
+
+
+
 }
+
+
