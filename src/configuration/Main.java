@@ -1,6 +1,5 @@
 package configuration;
 
-
 import simulationInterface.AffichageStats;
 import simulationMetier.Donjon;
 
@@ -18,21 +17,25 @@ public class Main {
 		Donjon monDonjon = new Donjon(Configurations.getGrilleX(), Configurations.getGrilleY(), Configurations.getNbrObstacle(), Configurations.getNbrHumainsClassique(), Configurations.getNbrHumainsEclaireur(), Configurations.getNbrHumainsTeleport(),Configurations.getNbrHumainsBuffer());
 		AffichageStats fenStats = new AffichageStats();
 		
+		
 		long temps;
+		
 		
 		for (;;) {
 			
-			try {
-				Thread.sleep(150);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			temps = System.currentTimeMillis();
+			if (temps == temps + fenStats.getVitesse()) {
+				monDonjon.jouer();
+				fenStats.rafraichir(nbrTour);
+				nbrTour++;
+				
+				temps = System.currentTimeMillis();
+				
+			}
+			else {
+				temps++;
 			}
 			
-			
-			monDonjon.jouer();
-			fenStats.rafraichir(nbrTour);
-			nbrTour++;
 		}
 		
 

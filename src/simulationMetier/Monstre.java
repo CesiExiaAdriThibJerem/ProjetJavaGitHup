@@ -307,7 +307,7 @@ public class Monstre extends ElementsMobile
 		}
 		hpMob = hpMob -1;
 		setPdvMonstre(this.hpMob);
-		System.out.println(getPdvMonstre());
+		
 		
 	}
 	
