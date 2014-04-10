@@ -2,6 +2,7 @@ package configuration;
 
 import simulationInterface.AffichageStats;
 import simulationMetier.Donjon;
+import simulationMetier.ElementsMobile;
 
 public class Main {
 
@@ -22,15 +23,22 @@ public class Main {
 		
 		temps = System.currentTimeMillis();
 		for (;;) {
+			if (ElementsMobile.getPdvMonstre() == 0) {
+				System.exit(0);
+			}
 			
-			
-				if(System.currentTimeMillis() - temps >= fenStats.getVitesse()) {
-					monDonjon.jouer();
+			if(System.currentTimeMillis() - temps >= fenStats.getVitesse() && !fenStats.isPas()) {
+				monDonjon.jouer();
 				fenStats.rafraichir(nbrTour);
 				nbrTour++;
-				System.out.println(fenStats.getVitesse());			
+						
 				temps = System.currentTimeMillis();
+
+				if (fenStats.isModepas()) {
+					fenStats.setPas(true);
 				}
+
+			}
 				
 				
 				

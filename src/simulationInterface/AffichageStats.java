@@ -1,11 +1,15 @@
 package simulationInterface;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JSlider;
 
+import simulationMetier.ElementsMobile;
 import configuration.Configurations;
 
 @SuppressWarnings("serial")
@@ -17,6 +21,13 @@ public class AffichageStats extends JFrame{
 	private JLabel nbrhumabuffer;
 	private JLabel tour;
 	
+	private JButton pasapas;
+	
+	private boolean pas = false;
+	private boolean modepas = false;
+	
+	private JLabel pdvMonstre;
+	
 	private long vitesse = 300;
 	
 	public AffichageStats() {
@@ -24,6 +35,7 @@ public class AffichageStats extends JFrame{
 		this.nbrhumaeclair = new JLabel();
 		this.nbrhumateleport = new JLabel();
 		this.nbrhumabuffer = new JLabel();
+		this.pdvMonstre = new JLabel();
 		
 		this.tour = new JLabel();
 		
@@ -38,7 +50,10 @@ public class AffichageStats extends JFrame{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setSize(300, 600);
 		
-		this.setLayout(new GridLayout(6,2));
+		this.setLayout(new GridLayout(7,2));
+		
+		this.add(new JLabel("Point de vie du monstre : "));
+		this.add(pdvMonstre);
 		
 		this.add(new JLabel("Nombre de tour : "));
 		this.add(tour);
@@ -60,12 +75,34 @@ public class AffichageStats extends JFrame{
 		
 		this.add(slide);
 		
+		pasapas = new JButton("-> Pas a pas");
+		
+		pasapas.addActionListener(new ActionListener() {
+			
+			
+			public void actionPerformed(ActionEvent arg0) {
+				
+				pas = false;
+				
+				
+			}
+		});
+		
+		pasapas.setEnabled(false);
+		this.add(pasapas);
 		
 		this.setVisible(true);
 	}
 	
 	public void rafraichir(int nbrTour) {
 		this.tour.setText(Integer.toString(nbrTour));
+		
+		this.nbrhumaclass.setText(Integer.toString(Configurations.getNbrHumainsClassique()));
+		this.nbrhumaeclair.setText(Integer.toString(Configurations.getNbrHumainsEclaireur()));
+		this.nbrhumateleport.setText(Integer.toString(Configurations.getNbrHumainsTeleport()));
+		this.nbrhumabuffer.setText(Integer.toString(Configurations.getNbrHumainsBuffer()));
+		
+		this.pdvMonstre.setText(Integer.toString(ElementsMobile.getPdvMonstre()));
 	}
 
 	public JLabel getNbrhumaclass() {
@@ -92,7 +129,31 @@ public class AffichageStats extends JFrame{
 		return vitesse;
 	}
 
+	public JLabel getPdvMonstre() {
+		return pdvMonstre;
+	}
+
 	public void setVitesse(long vitesse) {
 		this.vitesse = vitesse;
+	}
+
+	public boolean isPas() {
+		return pas;
+	}
+
+	public void setPas(boolean pas) {
+		this.pas = pas;
+	}
+
+	public boolean isModepas() {
+		return modepas;
+	}
+
+	public void setModepas(boolean modepas) {
+		this.modepas = modepas;
+	}
+
+	public JButton getPasapas() {
+		return pasapas;
 	}
 }

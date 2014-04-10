@@ -11,6 +11,7 @@ public class HumainEclaireur extends ElementsMobile  {
 		this.x=getX();
 		this.y=getY();
 		this.donjon = donjon;
+		this.nomE = "humaineclair";
 	}
 	
 	public void bouger() 

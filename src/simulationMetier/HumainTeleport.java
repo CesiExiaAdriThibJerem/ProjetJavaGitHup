@@ -16,6 +16,7 @@ public class HumainTeleport extends ElementsMobile {
 		this.x=getX();
 		this.y=getY();
 		this.donjon = donjon;
+		this.nomE = "humaintp";
 	}
 	
 	public void bouger()

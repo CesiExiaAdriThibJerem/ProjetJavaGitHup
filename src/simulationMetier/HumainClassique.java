@@ -14,6 +14,7 @@ public class HumainClassique extends ElementsMobile {
 		this.x=getX();
 		this.y=getY();
 		this.donjon = donjon;
+		this.nomE = "humainclass";
 	}
 	
 	public void bouger() 

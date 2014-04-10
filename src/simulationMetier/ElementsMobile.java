@@ -4,7 +4,10 @@ import java.awt.Image;
 import java.io.File;
 
 
+
 import javax.imageio.ImageIO;
+
+import configuration.Configurations;
 
 
 public abstract class ElementsMobile {
@@ -22,7 +25,7 @@ public abstract class ElementsMobile {
 	protected Donjon donjon;
 	protected int x;
 	protected int y;
-	protected int hpMob;
+	protected static int hpMob;
 	
 	protected boolean mort = false;
 	
@@ -84,11 +87,11 @@ public abstract class ElementsMobile {
 	public void setPdvMonstre(int hpMob)
 	{
 		
-		 this.hpMob = hpMob;
+		 ElementsMobile.hpMob = hpMob;
 	}
-	public int getPdvMonstre()
+	public static int getPdvMonstre()
 	{
-		return this.hpMob;
+		return ElementsMobile.hpMob;
 	}
 	
 	
@@ -118,6 +121,25 @@ public abstract class ElementsMobile {
 	
 	public void mourir() {
 		setImage("sol1.png");
-		this.mort = true;
+
+		if (this.mort == false) {
+			
+			if (this.nomE.equals("humainbuf")) {
+				Configurations.setNbrHumainsBuffer(Configurations.getNbrHumainsBuffer() - 1);
+			}
+			else if (this.nomE.equals("humainclass")) {
+				Configurations.setNbrHumainsClassique(Configurations.getNbrHumainsClassique() - 1);
+			}
+			else if (this.nomE.equals("humaineclair")) {
+				Configurations.setNbrHumainsEclaireur(Configurations.getNbrHumainsEclaireur() - 1);
+			}
+			else if (this.nomE.equals("humaintp")) {
+				Configurations.setNbrHumainsTeleport(Configurations.getNbrHumainsTeleport() - 1);
+			}
+			this.mort = true;
+			ElementsMobile.hpMob = hpMob + 20;
+		}
+		
+		
 	}
 }
