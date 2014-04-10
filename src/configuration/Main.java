@@ -28,7 +28,7 @@ public class Main {
 					monDonjon.jouer();
 				fenStats.rafraichir(nbrTour);
 				nbrTour++;
-				System.out.println(fenStats.getVitesse());			
+				//System.out.println(fenStats.getVitesse());			
 				temps = System.currentTimeMillis();
 				}
 				

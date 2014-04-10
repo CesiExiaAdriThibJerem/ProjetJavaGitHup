@@ -27,17 +27,18 @@ public class HumainBuffer extends ElementsMobile {
 		if (detection() == true)
 		{
 
-
+			System.out.println("test");
 			if (mort == false) {
 				Random random = new Random();
 				if(vivant==true)
 				{
-
+					
 					direction= random.nextInt(4);
+					
 
 					if (!this.donjon.getPosition(getX() + 1, getY()).estVide() && direction == sud ) {
 
-						direction = random.nextInt(4); 				
+						//direction = random.nextInt(4); 				
 
 					}
 					else if (this.donjon.getPosition(getX() + 1, getY()).estVide() && direction == sud )  
@@ -58,7 +59,7 @@ public class HumainBuffer extends ElementsMobile {
 					}
 					else if (!this.donjon.getPosition(getX(), getY() + 1).estVide() && direction == est ) {
 
-						direction = random.nextInt(4);				
+						//direction = random.nextInt(4);				
 
 					}
 					else if (this.donjon.getPosition(getX(), getY() + 1).estVide() && direction == est ) {
@@ -78,7 +79,7 @@ public class HumainBuffer extends ElementsMobile {
 
 					else if (!this.donjon.getPosition(getX() - 1, getY()).estVide() && direction == nord ) {
 
-						direction = random.nextInt(4);			
+						//direction = random.nextInt(4);			
 
 
 					}	
@@ -91,14 +92,14 @@ public class HumainBuffer extends ElementsMobile {
 						else {
 							if (e.getNomE().equals("Humain")) {
 
-								direction = random.nextInt(4);
+								//direction = random.nextInt(4);
 							}
 						}
 					}
 
 					else if (!this.donjon.getPosition(getX(), getY()-1).estVide() && direction == ouest ) {
 
-						direction = random.nextInt(4);
+						//direction = random.nextInt(4);
 
 					}
 					else if (this.donjon.getPosition(getX(), getY()-1).estVide() && direction == ouest  ) {
@@ -119,6 +120,7 @@ public class HumainBuffer extends ElementsMobile {
 		}
 		else
 		{
+			System.out.println("je m'amuse");
 			//ne rien faire
 		}
 	}
@@ -131,114 +133,78 @@ public class HumainBuffer extends ElementsMobile {
 
 		//check si il y à un monstre au sud de sa position
 
+		boolean ilYaUnMonstre = false;
 		if (donjon.getElementMobile(getX()+1, getY()) != null) {
-
-			if (donjon.getElementMobile(getX()+1, getY()).getNomE().equals("Monstre")) {
-
-				return true;
+			e = donjon.getElementMobile(getX()+1, getY());
+			if (e.getNomE().equals("Monstre")) 
+			{System.out.println("test2");
+				ilYaUnMonstre= true;
+				setDirection(nord);
 			}
 			
 			else 
 			{
-				return false;
+				
+				ilYaUnMonstre= false;
 			}
 
 		}
-		 if (donjon.getElementMobile(getX(), getY()+1) != null) {
+		else if (donjon.getElementMobile(getX(), getY()+1) != null) {
 
-			if (donjon.getElementMobile(getX(), getY()+1).getNomE().equals("Monstre"))
-			{
-				return true;
+			e = donjon.getElementMobile(getX(), getY()+1);
+			if (e.getNomE().equals("Monstre"))
+			{System.out.println("test3");
+				ilYaUnMonstre= true;
+				setDirection(ouest);
 			}
 			else
 			{
-				return false;
+				
+				ilYaUnMonstre= false;
 			}
 
 		}
-		 if (donjon.getElementMobile(getX()-1, getY())!= null)
+		else if (donjon.getElementMobile(getX()-1, getY())!= null)
 		{
-			if(donjon.getElementMobile(getX()-1, getY()).getNomE().equals("Monstre"))
-			{
-				return true;
+			e = donjon.getElementMobile(getX()-1, getY());
+			if (e.getNomE().equals("Monstre")) 
+			{System.out.println("test4");
+				ilYaUnMonstre= true;
+				setDirection(sud);
 			}
 			else
 			{
-				return false;
+				
+				ilYaUnMonstre= false;
 			}
 		}
 
-		 if(donjon.getElementMobile(getX(), getY()-1) != null)
+		else if(donjon.getElementMobile(getX(), getY()-1) != null)
 		{
-			if(donjon.getElementMobile(getX(), getY()-1).getNomE().equals("Monstre"))
-			{
-				return true;
+			e = donjon.getElementMobile(getX(), getY()-1);
+			if (e.getNomE().equals("Monstre"))
+			{System.out.println("test5");
+				ilYaUnMonstre= true;
+				setDirection(est);
 			}
 			else 
 			{
-				return false;
+				
+				ilYaUnMonstre= false;
 			}
 		}
-		else
-		{
-			return false;
-		}
+		 
+		return ilYaUnMonstre;
 
-
-		/*
-		if (danger1!= null || danger2)
-		{
-
-		if (danger.getNomE().equals("Monstre"))
-		{
-			return true;
-		}
-		else 
-		{
-			//a l'est
-			danger = donjon.getElementMobile(getX(), getY()+1);
-			if (danger != null)
-			{
-
-			if (danger.getNomE().equals("Monstre") )
-			{
-				return true; 
-			}
-			else
-			{
-				// au nord
-				danger = donjon.getElementMobile(getX()-1, getY());
-				if (danger != null)
-				{
-				if (danger.getNomE().equals("Monstre"))
-				{
-					return true;
-				}
-				else
-				{
-					// a l'ouest
-					if (danger != null)
-					{
-					danger = donjon.getElementMobile(getX(), getY()-1);
-					if (danger.getNomE().equals("Monstre"))
-					{
-						return true;
-					}
-					else
-					{
-						return false;
-					}
-				}
-				}
-			}
-			}
-		}
-		}
-
-
-	}
-		return false;*/
 		
+	}
+	public void setDirection(int direct)
+	{
+		this.direction=direct;
+	}
+	public int getDirection()
+	{
+		return this.direction;
 	}
 
 
