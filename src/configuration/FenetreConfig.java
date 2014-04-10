@@ -31,27 +31,28 @@ public class FenetreConfig extends JFrame{
 	private JTextField nbrpretreField;
 
 	public FenetreConfig() {
-		this.setTitle("Donjons - Configurations");
+		this.setTitle("Escape The TReX - Configurations");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
-		this.setSize(800, 600);
+		this.setSize(800, 400);
 
-		this.setLayout(new GridLayout(10,1));
+		this.setLayout(new GridLayout(7,1));
 
-		Font police = new Font("Consolas", Font.BOLD, 14);
-		Font policeAttention = new Font("Consolas", Font.BOLD, 18);
+		Font police = new Font("Calibri", Font.PLAIN, 14);
+		Font policeAttention = new Font("Calibri", Font.BOLD, 15);
 		noncondition.setFont(policeAttention);
+		
 
-		JLabel bienvenue = new JLabel("Bienvenue dans Donjons !"); bienvenue.setFont(police);
-		JLabel regle = new JLabel("Veuillez configurer les paramètre de jeu :"); regle.setFont(police);
+		JLabel bienvenue = new JLabel("   Bienvenue dans Escape the TReX !"); bienvenue.setFont(police);
+		JLabel regle = new JLabel("   Veuillez configurer les paramètre de jeu :"); regle.setFont(police);
 
-		JLabel taillex = new JLabel("Taille de la grille (entre 10 et 50) :"); taillex.setFont(police);
-		JLabel tailley = new JLabel("Taille de la grille en Y(entre 10 et 50) :"); tailley.setFont(police);
-		JLabel nbrobs = new JLabel("Nombre d'obstacles(entre 0 et 30) :"); nbrobs.setFont(police);
-		JLabel nbrhuma = new JLabel("Nombre d'humains(entre 0 et 20) :"); nbrhuma.setFont(police);
-		JLabel nbreclair = new JLabel("Nombre d'éclaireurs(entre 0 et 20) :"); nbreclair.setFont(police);
-		JLabel nbrteleport = new JLabel("Nombre de téléporteurs(entre 0 et 20) :"); nbrteleport.setFont(police);
-		JLabel nbrpretre = new JLabel("Nombre de pretre(entre 0 et 20) :"); nbrpretre.setFont(police);
+		JLabel taillex = new JLabel("   Taille de la grille (entre 10 et 50) :"); taillex.setFont(police);
+		JLabel tailley = new JLabel("   Taille de la grille en Y(entre 10 et 50) :"); tailley.setFont(police);
+		JLabel nbrobs = new JLabel("   Nombre d'obstacles(entre 0 et 30) :"); nbrobs.setFont(police);
+		JLabel nbrhuma = new JLabel("   Nombre d'humains(entre 0 et 20) :"); nbrhuma.setFont(police);
+		JLabel nbreclair = new JLabel("   Nombre d'éclaireurs(entre 0 et 20) :"); nbreclair.setFont(police);
+		JLabel nbrteleport = new JLabel("   Nombre de téléporteurs(entre 0 et 20) :"); nbrteleport.setFont(police);
+		JLabel nbrpretre = new JLabel("   Nombre de pretre(entre 0 et 20) :"); nbrpretre.setFont(police);
 
 		taillexField = new JTextField();
 		tailleyField = new JTextField();

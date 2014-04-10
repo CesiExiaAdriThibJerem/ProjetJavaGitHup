@@ -37,7 +37,13 @@ public class Evenements implements ActionListener{
 			int a6 = Integer.parseInt(SnbrTeleport);
 			int a7 = Integer.parseInt(SnbrPretre);
 
-			if ((a1 >= 10 && a1 <=50) && (a2 >= 10 && a2 <=50) && (a3 >= 0 && a3 <=30) && (a4 >= 0 && a4 <=20) && (a5 >= 0 && a5 <=20) && (a6 >= 0 && a6 <=20) && (a7 >= 0 && a7 <=20))
+			int somme = a3+a4+a5+a6+a7;
+
+			if ( a1 < 20 && somme > 60) {
+				fen.getNoncondition().setText("Attention : Ne pas exceder les 60 elements pour une taille inférieur a 20");
+				
+			}
+			else if ((a1 >= 10 && a1 <=50) && (a2 >= 10 && a2 <=50) && (a3 >= 0 && a3 <=30) && (a4 >= 0 && a4 <=20) && (a5 >= 0 && a5 <=20) && (a6 >= 0 && a6 <=20) && (a7 >= 0 && a7 <=20))
 			{
 				fen.getNoncondition().setText("");
 				attributionDesParametre(a1,a2,a3,a4,a5,a6,a7);	
@@ -47,6 +53,8 @@ public class Evenements implements ActionListener{
 			else {
 				fen.getNoncondition().setText("Veuillez vérifier, les conditions ne sont pas respectés !");
 			}
+
+
 
 		}
 

@@ -1,5 +1,7 @@
 package simulationMetier;
 
+import java.util.Random;
+
 
 
 public class Monstre extends ElementsMobile
@@ -309,7 +311,12 @@ public class Monstre extends ElementsMobile
 		}
 		hpMob = hpMob -1;
 		setPdvMonstre(ElementsMobile.hpMob);
-
+		
+		Random nbr = new Random();
+		
+		if (nbr.nextInt(5) == 0) {
+			direction = nbr.nextInt(3);
+		}
 
 	}
 

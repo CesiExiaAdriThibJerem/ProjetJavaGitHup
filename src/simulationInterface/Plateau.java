@@ -46,7 +46,7 @@ public class Plateau {
 
 		fen = new JFrame();
 
-		fen.setTitle("Donjons");
+		fen.setTitle("Escape The TReX");
 		fen.setLocationRelativeTo(null);
 		fen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		fen.setSize(30*largeur,30*longueur);
