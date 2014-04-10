@@ -193,13 +193,13 @@ public class Donjon {
 		boolean valide = false;
 		int nbr;
 
-		int x = this.hasard.nextInt(this.largeurGrille);
+		int x = this.hasard.nextInt(this.longueurGrille);
 		int y = this.hasard.nextInt(this.longueurGrille);
 
 
 
 		//tant que la case n'est pas vide boucle et qu'il n'y a pas d'element mobile dessus
-		while (cases[x][y].estVide()==false && valide == false)
+		while (cases[x][y].estVide()==false || valide == false)
 		{
 			nbr = 0;
 			for (ElementsMobile a : this.mobile) {
@@ -211,9 +211,11 @@ public class Donjon {
 					valide =true;
 				}
 			}			
-
-			x = this.hasard.nextInt(this.largeurGrille);
-			y = this.hasard.nextInt(this.longueurGrille);
+			if (valide == false || cases[x][y].estVide()==false) {
+				x = this.hasard.nextInt(this.longueurGrille);
+				y = this.hasard.nextInt(this.longueurGrille);
+			}
+			
 		}
 
 		// renvoi a ElementsMobile les nouvelles coordonnées

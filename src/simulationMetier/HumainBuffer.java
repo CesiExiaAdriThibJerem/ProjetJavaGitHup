@@ -25,7 +25,7 @@ public class HumainBuffer extends ElementsMobile {
 		if (detection() == true)
 		{
 
-			System.out.println("test");
+			
 			if (mort == false) {
 				Random random = new Random();
 				if(vivant==true)
