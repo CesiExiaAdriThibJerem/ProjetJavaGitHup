@@ -87,10 +87,7 @@ public class AffichageStats extends JFrame{
 				
 			}
 		});
-<<<<<<< HEAD
-		
-=======
->>>>>>> 4d02645308d80fcd89eb53a709c8674cebd3aee8
+
 		pasapas.setEnabled(false);
 		this.add(pasapas);
 		
@@ -104,11 +101,10 @@ public class AffichageStats extends JFrame{
 		this.nbrhumaeclair.setText(Integer.toString(Configurations.getNbrHumainsEclaireur()));
 		this.nbrhumateleport.setText(Integer.toString(Configurations.getNbrHumainsTeleport()));
 		this.nbrhumabuffer.setText(Integer.toString(Configurations.getNbrHumainsBuffer()));
-<<<<<<< HEAD
+
 		
 		this.pdvMonstre.setText(Integer.toString(ElementsMobile.getPdvMonstre()));
-=======
->>>>>>> 4d02645308d80fcd89eb53a709c8674cebd3aee8
+
 	}
 
 	public JLabel getNbrhumaclass() {
