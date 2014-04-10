@@ -20,6 +20,16 @@ public class EvenementStats implements ChangeListener {
 		
 		fen.setVitesse(nbr2);
 		
+		if (e.getValue() == 600) {
+			fen.setModepas(true);
+			fen.getPasapas().setEnabled(true);
+		}
+		else {
+			fen.setModepas(false);
+			fen.getPasapas().setEnabled(false);
+			fen.setPas(false);
+		}
+		
 
 	}
 

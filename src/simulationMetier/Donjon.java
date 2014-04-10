@@ -312,7 +312,11 @@ public class Donjon {
 		    	this.plateauJeu.placerElement(a);
 		   
 		    }
-			
+		    else {
+		    	
+		    	
+		    	
+		    }
 			
 		}
 		

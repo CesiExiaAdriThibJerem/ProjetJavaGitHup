@@ -24,13 +24,18 @@ public class Main {
 		for (;;) {
 			
 			
-				if(System.currentTimeMillis() - temps >= fenStats.getVitesse()) {
-					monDonjon.jouer();
+			if(System.currentTimeMillis() - temps >= fenStats.getVitesse() && !fenStats.isPas()) {
+				monDonjon.jouer();
 				fenStats.rafraichir(nbrTour);
 				nbrTour++;
-				System.out.println(fenStats.getVitesse());			
+						
 				temps = System.currentTimeMillis();
+
+				if (fenStats.isModepas()) {
+					fenStats.setPas(true);
 				}
+
+			}
 				
 				
 				
