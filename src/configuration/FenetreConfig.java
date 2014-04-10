@@ -2,7 +2,14 @@ package configuration;
 
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.io.File;
+import java.io.IOException;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -29,6 +36,8 @@ public class FenetreConfig extends JFrame{
 	private JTextField nbreclairField;
 	private JTextField nbrteleportField;
 	private JTextField nbrpretreField;
+	
+	private Clip clip;
 
 	public FenetreConfig() {
 		this.setTitle("Escape The TReX - Configurations");
@@ -117,6 +126,23 @@ public class FenetreConfig extends JFrame{
 		this.add(contentpan6);
 		this.setResizable(false);
 		this.setVisible(true);
+		
+		
+		
+		try {
+            AudioInputStream audioIn = AudioSystem.getAudioInputStream(new File("sons/config.wav"));
+            // Get a sound clip resource.
+            clip = AudioSystem.getClip();
+            // Open audio clip and load samples from the audio input stream.
+            clip.open(audioIn);
+            clip.start();
+        } catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        }
 	}
 
 
@@ -217,5 +243,11 @@ public class FenetreConfig extends JFrame{
 
 	public boolean isValide() {
 		return valide;
+	}
+
+
+
+	public Clip getClip() {
+		return clip;
 	}
 }

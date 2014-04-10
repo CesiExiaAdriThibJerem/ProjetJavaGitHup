@@ -48,6 +48,7 @@ public class Evenements implements ActionListener{
 				fen.getNoncondition().setText("");
 				attributionDesParametre(a1,a2,a3,a4,a5,a6,a7);	
 				Configurations.setValide(true);
+				fen.getClip().stop();
 				fen.dispose();
 			}
 			else {
