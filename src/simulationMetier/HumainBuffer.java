@@ -122,7 +122,7 @@ public class HumainBuffer extends ElementsMobile {
 		}
 		else
 		{
-			System.out.println("je m'amuse");
+			
 			//ne rien faire
 		}
 	}
@@ -139,7 +139,7 @@ public class HumainBuffer extends ElementsMobile {
 		if (donjon.getElementMobile(getX()+1, getY()) != null) {
 			e = donjon.getElementMobile(getX()+1, getY());
 			if (e.getNomE().equals("Monstre")) 
-			{System.out.println("test2");
+			{
 				ilYaUnMonstre= true;
 				setDirection(nord);
 			}
@@ -155,7 +155,7 @@ public class HumainBuffer extends ElementsMobile {
 
 			e = donjon.getElementMobile(getX(), getY()+1);
 			if (e.getNomE().equals("Monstre"))
-			{System.out.println("test3");
+			{
 				ilYaUnMonstre= true;
 				setDirection(ouest);
 			}
@@ -170,7 +170,7 @@ public class HumainBuffer extends ElementsMobile {
 		{
 			e = donjon.getElementMobile(getX()-1, getY());
 			if (e.getNomE().equals("Monstre")) 
-			{System.out.println("test4");
+			{
 				ilYaUnMonstre= true;
 				setDirection(sud);
 			}
@@ -185,7 +185,7 @@ public class HumainBuffer extends ElementsMobile {
 		{
 			e = donjon.getElementMobile(getX(), getY()-1);
 			if (e.getNomE().equals("Monstre"))
-			{System.out.println("test5");
+			{
 				ilYaUnMonstre= true;
 				setDirection(est);
 			}

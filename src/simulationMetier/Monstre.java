@@ -19,6 +19,7 @@ public class Monstre extends ElementsMobile
 		setPdvMonstre(100); 
 		this.x = getX();
 		this.y = getY();
+		this.nomE = "Monstre";
 	}
 	
 	
