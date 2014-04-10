@@ -3,7 +3,7 @@ package simulationMetier;
 
 
 public class Pierre extends ElementsMobile {
-	
+
 	Pierre()
 	{
 		setImage("pierre.png");
@@ -15,7 +15,7 @@ public class Pierre extends ElementsMobile {
 	@Override
 	public void bouger() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

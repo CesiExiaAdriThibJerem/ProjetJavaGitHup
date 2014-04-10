@@ -11,12 +11,12 @@ import configuration.Configurations;
 
 
 public abstract class ElementsMobile {
-	
+
 	public final static int nord = 0;
 	public final static int ouest = 1;
 	public final static int est = 2;
 	public final static int sud = 3;
-	
+
 	protected int vision;
 	protected int deplacement;
 	protected boolean vivant;
@@ -26,9 +26,9 @@ public abstract class ElementsMobile {
 	protected int x;
 	protected int y;
 	protected static int hpMob;
-	
+
 	protected boolean mort = false;
-	
+
 	public boolean isMort() {
 		return mort;
 	}
@@ -37,7 +37,7 @@ public abstract class ElementsMobile {
 
 
 	protected String nomE = "Humain";
-	
+
 	public String getNomE() {
 		return nomE;
 	}
@@ -47,8 +47,8 @@ public abstract class ElementsMobile {
 
 	private Image img;
 
-	
-	
+
+
 	public Image getImage() {
 		return img;
 	}
@@ -59,22 +59,22 @@ public abstract class ElementsMobile {
 	public void setImage(String image)
 	{
 		try {
-					
-				
-				this.img = ImageIO.read(new File("image/"+image));
-					
-			} catch (Exception e) 
-				
-			{
-				System.out.println("impossible d'afficher l'image: "+ image);
-					
-					
-			}
+
+
+			this.img = ImageIO.read(new File("image/"+image));
+
+		} catch (Exception e) 
+
+		{
+			System.out.println("impossible d'afficher l'image: "+ image);
+
+
+		}
 	}
-	
-	
+
+
 	public abstract void bouger();
-	
+
 	public int getX()
 	{
 		return this.x;//permet de connaitre la position x(abscisse) d'un element
@@ -86,18 +86,18 @@ public abstract class ElementsMobile {
 	}
 	public void setPdvMonstre(int hpMob)
 	{
-		
-		 ElementsMobile.hpMob = hpMob;
+
+		ElementsMobile.hpMob = hpMob;
 	}
 	public static int getPdvMonstre()
 	{
 		return ElementsMobile.hpMob;
 	}
-	
-	
-		
-		
-	
+
+
+
+
+
 	public void setX(final int x) {
 		this.x = x;
 	}
@@ -105,8 +105,8 @@ public abstract class ElementsMobile {
 	public void setY(final int y) {
 		this.y = y;
 	}
-	
-	
+
+
 
 	public int getDirection() {
 		return direction;
@@ -118,12 +118,12 @@ public abstract class ElementsMobile {
 	public void setDirection(int direction) {
 		this.direction = direction;
 	}
-	
+
 	public void mourir() {
 		setImage("sol1.png");
 
 		if (this.mort == false) {
-			
+
 			if (this.nomE.equals("humainbuf")) {
 				Configurations.setNbrHumainsBuffer(Configurations.getNbrHumainsBuffer() - 1);
 			}
@@ -139,7 +139,7 @@ public abstract class ElementsMobile {
 			this.mort = true;
 			ElementsMobile.hpMob = hpMob + 20;
 		}
-		
-		
+
+
 	}
 }

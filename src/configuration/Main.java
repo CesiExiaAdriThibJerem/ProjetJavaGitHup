@@ -9,24 +9,31 @@ public class Main {
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		FenetreConfig fenconfig = new FenetreConfig();
-		
+
 		while (Configurations.isValide() == false) {
 			System.out.print("");
-			}
+		}
 		int nbrTour = 0 ;
-		
+
 		Donjon monDonjon = new Donjon(Configurations.getGrilleX(), Configurations.getGrilleY(), Configurations.getNbrObstacle(), Configurations.getNbrHumainsClassique(), Configurations.getNbrHumainsEclaireur(), Configurations.getNbrHumainsTeleport(),Configurations.getNbrHumainsBuffer());
 		AffichageStats fenStats = new AffichageStats();
-		
-		
+
+
 		long temps;
-		
+
 		temps = System.currentTimeMillis();
 		for (;;) {
+
 			if (ElementsMobile.getPdvMonstre() == 0) {
-				System.exit(0);
+				monDonjon.finDuJeu();
+				temps = System.currentTimeMillis();
+				for (;;) {
+					if(System.currentTimeMillis() - temps >= 4000) {
+						System.exit(0);
+					}
+				}
 			}
-			
+
 
 			if(System.currentTimeMillis() - temps >= fenStats.getVitesse() && !fenStats.isPas()) {
 				monDonjon.jouer();
@@ -43,11 +50,11 @@ public class Main {
 				}
 
 			}
-				
-				
-				
+
+
+
 		}
-		
+
 
 
 	}

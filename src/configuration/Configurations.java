@@ -12,12 +12,12 @@ public class Configurations {
 	private static int nbrHumainsEclaireur;
 	private static int nbrHumainsTeleport;
 	private static int nbrHumainsBuffer;
-	
+
 	public static ArrayList<ElementsMobile> MOBILE = new ArrayList<>();
-	
+
 	private static boolean valide = false;
-	
-	
+
+
 	public static void setValide(boolean valide) {
 		Configurations.valide = valide;
 	}
@@ -64,10 +64,10 @@ public class Configurations {
 		Configurations.nbrHumainsBuffer = nbrHumainsBuffer;
 	}
 	public static boolean isValide() {
-		
+
 		return valide;
 	}
-	
-	
-	
+
+
+
 }

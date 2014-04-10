@@ -9,7 +9,7 @@ import configuration.Configurations;
 import simulationInterface.Plateau;
 
 public class Donjon {
-	
+
 	private int largeurGrille;
 	public int getLargeurGrille() {
 		return largeurGrille;
@@ -27,18 +27,18 @@ public class Donjon {
 	private int nbrHumainBuffer;
 	private Case cases[][];
 	private Random hasard;
-	
+
 	private Plateau plateauJeu;
-	
+
 	private ArrayList<ElementsMobile> mobile = new ArrayList<>();
-	
-	
+
+
 
 
 	//Creation du Donjon
 	public Donjon(int grilleX, int grilleY, int nbrObstacle, int nbrHumainClassique, int nbrHumaineEclaireur, int nbrHumainTeleport, int nbrHumainBuffer)
 	{
-		
+
 		largeurGrille = grilleX;
 		longueurGrille = grilleY;
 		nombreObstacle = nbrObstacle;
@@ -46,14 +46,14 @@ public class Donjon {
 		this.nbrHumainBuffer = nbrHumainBuffer;
 		this.nbrHumainEclaireur = nbrHumaineEclaireur;
 		this.nbrHumainTeleport = nbrHumainTeleport;
-		
+
 		this.cases= new Case[largeurGrille][longueurGrille];
 		this.hasard = new Random();
-		
+
 		Case unecase;
-		
+
 		//Parcour les cases du tableau pour placer les coins
-		
+
 		for (int y=0; y< longueurGrille; y++)
 		{
 			for (int x=0; x< largeurGrille; x++)
@@ -75,7 +75,7 @@ public class Donjon {
 				{
 					unecase = new CoinBasGauche();
 				}
-				
+
 				// Pour placer les bords
 				else if ((y==0 && x != 0 && x != largeurGrille-1) || (y==longueurGrille-1 && x != 0 && x != largeurGrille-1))
 				{
@@ -84,9 +84,9 @@ public class Donjon {
 				else if ((x==0 && y != 0 && y != longueurGrille-1) || (x==largeurGrille-1 && y != 0 && y != longueurGrille-1))
 				{
 					unecase = new MurVertical();
-					
+
 				}
-				
+
 				//Placer les tours de façon aléatoire
 				else if (hasard.nextInt(20)==0)
 				{
@@ -96,37 +96,37 @@ public class Donjon {
 				else 
 				{
 					unecase = construireUnSol();
-					
+
 				}
-				
+
 				this.cases[x][y]= unecase;
 
-				
+
 			}
-			
-			
+
+
 		}
-		
-		
-		
+
+
+
 		//Instanciation du plateau
-			
+
 
 		this.plateauJeu = new Plateau(this.largeurGrille, this.longueurGrille, this.cases);
-		
+
 		placerLesBuffers();
 		placerLesClassiques();
 		placerLesEclaireur();
 		placerLesTeleports();
 		placerLesPierres();
-		
+
 		placerLeMonstre();
-		
+
 	}
-	
+
 	private void placerLesPierres() {
 		Pierre e;
-		
+
 		for (int i = 0; i < this.nombreObstacle; i++)
 		{
 			e = new Pierre();
@@ -135,36 +135,36 @@ public class Donjon {
 			this.plateauJeu.placerElement(e);
 		}
 	}
-	
-	
+
+
 	private void placerLeMonstre() {
-		
-			
-		
-			Monstre monstre = new Monstre(this);
-			this.mobile.add(monstre);
-			this.placerUnElementMobileAuHasard(monstre);
-			this.plateauJeu.placerElement(monstre);
-			
-			//LePlacer sur le plateau		
-		
+
+
+
+		Monstre monstre = new Monstre(this);
+		this.mobile.add(monstre);
+		this.placerUnElementMobileAuHasard(monstre);
+		this.plateauJeu.placerElement(monstre);
+
+		//LePlacer sur le plateau		
+
 	}
 
 
 	public Case getPosition(int x, int y)
 	{
 		//System.out.println(Configurations.getGrilleX());
-	//	System.out.println(x +" "+ y);
+		//	System.out.println(x +" "+ y);
 		if ((x >= Configurations.getGrilleX()-1 || x < 0) || (y >= Configurations.getGrilleX()-1 || y < 0)) {
 			//System.out.print("faux");
 			return this.cases[0][0];
-			
+
 		}
 		else {
 			//System.out.print("vrai");
 			return this.cases[y][x];
 		}
-		
+
 	}
 	//Methode permettant de choisir aléatoirement un des 3 sols
 	private Case construireUnSol()
@@ -184,20 +184,20 @@ public class Donjon {
 			c = new Sol3();
 		}
 		return c;
-		
+
 	}
-	
+
 	//Methode pour placer les elements mobiles
 	private void placerUnElementMobileAuHasard(ElementsMobile e)
 	{
 		boolean valide = false;
 		int nbr;
-		
+
 		int x = this.hasard.nextInt(this.largeurGrille);
 		int y = this.hasard.nextInt(this.longueurGrille);
-		
-		
-		
+
+
+
 		//tant que la case n'est pas vide boucle et qu'il n'y a pas d'element mobile dessus
 		while (cases[x][y].estVide()==false && valide == false)
 		{
@@ -211,33 +211,33 @@ public class Donjon {
 					valide =true;
 				}
 			}			
-			
+
 			x = this.hasard.nextInt(this.largeurGrille);
 			y = this.hasard.nextInt(this.longueurGrille);
 		}
-		
+
 		// renvoi a ElementsMobile les nouvelles coordonnées
 		e.setX(x);
 		e.setY(y);
-		
-		
 
-		
+
+
+
 	}
-	
+
 	// méthode avec les coordonnées
 	public void setXY(int x, int y, Case c)
 	{
 		this.cases[x][y] = c;
-		
-		
+
+
 	}
-	
+
 	// Placer les humains Buffers
 	private void placerLesBuffers()
 	{
 		HumainBuffer e;
-		
+
 		//Recupere le nombre d'objet à placer et increment en fonction
 		for (int i = 0; i < this.nbrHumainBuffer; i++)
 		{
@@ -245,14 +245,14 @@ public class Donjon {
 			this.mobile.add(e);
 			this.placerUnElementMobileAuHasard(e);
 			this.plateauJeu.placerElement(e);
-			
+
 		}
 	}
-	
+
 	private void placerLesClassiques()
 	{
 		HumainClassique e;
-		
+
 		//Recupere le nombre d'objet à placer et increment en fonction
 		for (int i = 0; i < this.nbrHumainClassique; i++)
 		{
@@ -260,13 +260,13 @@ public class Donjon {
 			this.mobile.add(e);
 			this.placerUnElementMobileAuHasard(e);
 			this.plateauJeu.placerElement(e);
-			
+
 		}
 	}
 	private void placerLesEclaireur()
 	{
 		HumainEclaireur e;
-		
+
 		//Recupere le nombre d'objet à placer et increment en fonction
 		for (int i = 0; i < this.nbrHumainEclaireur; i++)
 		{
@@ -274,13 +274,13 @@ public class Donjon {
 			this.mobile.add(e);
 			this.placerUnElementMobileAuHasard(e);
 			this.plateauJeu.placerElement(e);
-			
+
 		}
 	}
 	private void placerLesTeleports()
 	{
 		HumainTeleport e;
-		
+
 		//Recupere le nombre d'objet à placer et increment en fonction
 		for (int i = 0; i < this.nbrHumainTeleport; i++)
 		{
@@ -288,48 +288,52 @@ public class Donjon {
 			this.mobile.add(e);
 			this.placerUnElementMobileAuHasard(e);
 			this.plateauJeu.placerElement(e);
-			
+
 		}
 	}
-	
+
 	public void jouer() {
-		
+
 		plateauJeu.rafraichir();
 		for (ElementsMobile a : this.mobile) {
 			//System.out.println("Monstre : " + a.getX() +" " + a.getY());
-			
+
 			a.bouger();
-			
-		    int hpMob= a.getPdvMonstre();
-		  
-		    if(hpMob==0 )
-		    {
-		    	//System.out.println("Mob Mort");
-		    	//System.exit(0);
-		    }
-		    
-		    if (!a.isMort()) {
-		    	this.plateauJeu.placerElement(a);
-		   
-		    }
 
-		   
+			int hpMob= ElementsMobile.getPdvMonstre();
 
-		    else {
-		    	
-		    	
-		    	
-		    }
+			if(hpMob==0 )
+			{
+				//System.out.println("Mob Mort");
+				//System.exit(0);
+			}
 
-			
+			if (!a.isMort()) {
+				this.plateauJeu.placerElement(a);
+
+			}
+
+
+
+			else {
+
+
+
+			}
+
+
 		}
-		
+
 	}
-	
+
+	public void finDuJeu() {
+		plateauJeu.finDuJeu();
+	}
+
 	public ElementsMobile getElementMobile(int x, int y) {
 		for (ElementsMobile e : this.mobile) {
 			if (e != null) {
-				
+
 				if ( (e.getX() == x) && (e.getY() == y) ) {
 					return e;
 				}
@@ -337,12 +341,12 @@ public class Donjon {
 		}
 		return null;
 	}
-			
-		
-	}
-	
-	
-	
+
+
+}
+
+
+
 
 
 

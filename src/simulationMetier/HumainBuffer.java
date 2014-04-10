@@ -4,11 +4,7 @@ import java.util.Random;
 
 public class HumainBuffer extends ElementsMobile {
 	private ElementsMobile e;
-	private ElementsMobile danger;
-	private ElementsMobile danger1;
-	private ElementsMobile danger2;
-	private ElementsMobile danger3;
-	private ElementsMobile danger4;
+
 	HumainBuffer(Donjon donjon)
 	{
 		setImage("hommebuufer.png");
@@ -19,7 +15,7 @@ public class HumainBuffer extends ElementsMobile {
 		this.x=getX();
 		this.y=getY();
 		this.donjon = donjon;
-		
+
 		this.nomE = "humainbuf";
 	}
 
@@ -34,9 +30,9 @@ public class HumainBuffer extends ElementsMobile {
 				Random random = new Random();
 				if(vivant==true)
 				{
-					
+
 					direction= random.nextInt(4);
-					
+
 
 					if (!this.donjon.getPosition(getX() + 1, getY()).estVide() && direction == sud ) {
 
@@ -122,7 +118,7 @@ public class HumainBuffer extends ElementsMobile {
 		}
 		else
 		{
-			
+
 			//ne rien faire
 		}
 	}
@@ -143,10 +139,10 @@ public class HumainBuffer extends ElementsMobile {
 				ilYaUnMonstre= true;
 				setDirection(nord);
 			}
-			
+
 			else 
 			{
-				
+
 				ilYaUnMonstre= false;
 			}
 
@@ -161,7 +157,7 @@ public class HumainBuffer extends ElementsMobile {
 			}
 			else
 			{
-				
+
 				ilYaUnMonstre= false;
 			}
 
@@ -176,7 +172,7 @@ public class HumainBuffer extends ElementsMobile {
 			}
 			else
 			{
-				
+
 				ilYaUnMonstre= false;
 			}
 		}
@@ -191,14 +187,14 @@ public class HumainBuffer extends ElementsMobile {
 			}
 			else 
 			{
-				
+
 				ilYaUnMonstre= false;
 			}
 		}
-		 
+
 		return ilYaUnMonstre;
 
-		
+
 	}
 	public void setDirection(int direct)
 	{

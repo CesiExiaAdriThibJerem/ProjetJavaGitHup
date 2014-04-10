@@ -16,101 +16,101 @@ public class HumainClassique extends ElementsMobile {
 		this.donjon = donjon;
 		this.nomE = "humainclass";
 	}
-	
+
 	public void bouger() 
 	{
 		if (mort == false) {
-		Random random = new Random();
-		if(vivant==true)
-		{
-
-			direction= random.nextInt(4);
-			if (!this.donjon.getPosition(getX() + 1, getY()).estVide() && direction == sud ) {
-				
-				direction = random.nextInt(4); 				
-				
-			}
-			else if (this.donjon.getPosition(getX() + 1, getY()).estVide() && direction == sud )  
+			Random random = new Random();
+			if(vivant==true)
 			{
-				
-				e = donjon.getElementMobile(getX()+1, getY());
-				if (e == null) {
-					setX(getX()+1);
+
+				direction= random.nextInt(4);
+				if (!this.donjon.getPosition(getX() + 1, getY()).estVide() && direction == sud ) {
+
+					direction = random.nextInt(4); 				
+
 				}
-				else {
+				else if (this.donjon.getPosition(getX() + 1, getY()).estVide() && direction == sud )  
+				{
+
+					e = donjon.getElementMobile(getX()+1, getY());
+					if (e == null) {
+						setX(getX()+1);
+					}
+					else {
 						if (e.getNomE().equals("Humain")) {
-									
-								direction = random.nextInt(4);
-								}
-						
-					}
-				
-			}
-			else if (!this.donjon.getPosition(getX(), getY() + 1).estVide() && direction == est ) {
-				
-				direction = random.nextInt(4);				
-				
-			}
-			else if (this.donjon.getPosition(getX(), getY() + 1).estVide() && direction == est ) {
-				e = donjon.getElementMobile(getX(), getY()+1);
-				if (e == null) {
-					setY(getY()+1);
-				}
-				else {
-					if (e.getNomE().equals("Humain")) {
-								
+
 							direction = random.nextInt(4);
-							}
+						}
+
+					}
+
+				}
+				else if (!this.donjon.getPosition(getX(), getY() + 1).estVide() && direction == est ) {
+
+					direction = random.nextInt(4);				
+
+				}
+				else if (this.donjon.getPosition(getX(), getY() + 1).estVide() && direction == est ) {
+					e = donjon.getElementMobile(getX(), getY()+1);
+					if (e == null) {
+						setY(getY()+1);
+					}
+					else {
+						if (e.getNomE().equals("Humain")) {
+
+							direction = random.nextInt(4);
+						}
 					}
 				}
-				
-			
-			
-			else if (!this.donjon.getPosition(getX() - 1, getY()).estVide() && direction == nord ) {
-				
-				direction = random.nextInt(4);			
 
 
-			}	
 
-			else if (this.donjon.getPosition(getX() - 1, getY()).estVide() && direction == nord ) {
-				e = donjon.getElementMobile(getX() -1, getY());
-				if (e == null) {
-					setX(getX()-1);
-				}
-				else {
-					if (e.getNomE().equals("Humain")) {
-								
-							direction = random.nextInt(4);
-							}
+				else if (!this.donjon.getPosition(getX() - 1, getY()).estVide() && direction == nord ) {
+
+					direction = random.nextInt(4);			
+
+
+				}	
+
+				else if (this.donjon.getPosition(getX() - 1, getY()).estVide() && direction == nord ) {
+					e = donjon.getElementMobile(getX() -1, getY());
+					if (e == null) {
+						setX(getX()-1);
 					}
-			}
-			
-			else if (!this.donjon.getPosition(getX(), getY()-1).estVide() && direction == ouest ) {
-				
-				direction = random.nextInt(4);
-					
-							}
-			else if (this.donjon.getPosition(getX(), getY()-1).estVide() && direction == ouest  ) {
-				e = donjon.getElementMobile(getX(), getY()-1);
-				if (e == null) {
-					setY(getY()-1);
-				}
-				else {
-					if (e.getNomE().equals("Humain")) {
-								
+					else {
+						if (e.getNomE().equals("Humain")) {
+
 							direction = random.nextInt(4);
-							}
+						}
 					}
+				}
+
+				else if (!this.donjon.getPosition(getX(), getY()-1).estVide() && direction == ouest ) {
+
+					direction = random.nextInt(4);
+
+				}
+				else if (this.donjon.getPosition(getX(), getY()-1).estVide() && direction == ouest  ) {
+					e = donjon.getElementMobile(getX(), getY()-1);
+					if (e == null) {
+						setY(getY()-1);
+					}
+					else {
+						if (e.getNomE().equals("Humain")) {
+
+							direction = random.nextInt(4);
+						}
+					}
+				}
+
 			}
-		
 		}
-		}
-		
+
 	}
 }
 
-	
+
 
 
 

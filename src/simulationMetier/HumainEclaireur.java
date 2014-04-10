@@ -95,15 +95,15 @@ public class HumainEclaireur extends ElementsMobile  {
 							setX(getX()-2);
 						}
 						else {
-								if (e.getNomE().equals("Humain")) {
-	
-									direction = sud;
-								}
-								else if ((e.getNomE().equals("Monstre")))
-								{
-									direction=sud;
-	
-								}
+							if (e.getNomE().equals("Humain")) {
+
+								direction = sud;
+							}
+							else if ((e.getNomE().equals("Monstre")))
+							{
+								direction=sud;
+
+							}
 						}
 					}
 
