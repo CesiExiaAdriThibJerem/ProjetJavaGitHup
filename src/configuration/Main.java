@@ -27,11 +27,23 @@ public class Main {
 				System.exit(0);
 			}
 			
+<<<<<<< HEAD
+=======
+			
+>>>>>>> 4d02645308d80fcd89eb53a709c8674cebd3aee8
 			if(System.currentTimeMillis() - temps >= fenStats.getVitesse() && !fenStats.isPas()) {
 				monDonjon.jouer();
 				fenStats.rafraichir(nbrTour);
 				nbrTour++;
+<<<<<<< HEAD
 						
+=======
+<<<<<<< HEAD
+				//System.out.println(fenStats.getVitesse());			
+=======
+						
+>>>>>>> e28559634130a715a6a549f73f9c9d7c0b3d70f4
+>>>>>>> 4d02645308d80fcd89eb53a709c8674cebd3aee8
 				temps = System.currentTimeMillis();
 
 				if (fenStats.isModepas()) {
