@@ -19,6 +19,8 @@ public class HumainBuffer extends ElementsMobile {
 		this.x=getX();
 		this.y=getY();
 		this.donjon = donjon;
+		
+		this.nomE = "humainbuf";
 	}
 
 	public void bouger() 
