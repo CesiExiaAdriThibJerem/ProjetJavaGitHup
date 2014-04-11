@@ -4,7 +4,8 @@ import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-public class EvenementStats implements ChangeListener {
+
+public class EvenementStats implements ChangeListener { // Cette classe gere les evenements lier aux stats
 
 	private AffichageStats fen;
 
@@ -12,6 +13,10 @@ public class EvenementStats implements ChangeListener {
 		this.fen = fen;
 	}
 
+	/**
+	 * stateChanged gere l'evenement du slider 
+	 * 
+	 */
 	public void stateChanged(ChangeEvent arg0) {
 		JSlider e = (JSlider) arg0.getSource();
 		int nbr = e.getValue();

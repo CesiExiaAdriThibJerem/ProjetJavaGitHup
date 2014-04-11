@@ -18,6 +18,9 @@ import javax.swing.JTextField;
 
 @SuppressWarnings("serial")
 public class FenetreConfig extends JFrame{
+	/**
+	 * Fenetre de configuration principale
+	 */
 
 	private int grilleX;
 	private int grilleY;
@@ -129,11 +132,11 @@ public class FenetreConfig extends JFrame{
 		
 		
 		
-		try {
-            AudioInputStream audioIn = AudioSystem.getAudioInputStream(new File("sons/config.wav"));
-            // Get a sound clip resource.
+		try { // Ajout de la musique
+            AudioInputStream audioIn = AudioSystem.getAudioInputStream(new File("sons/config.wav")); 
+            
             clip = AudioSystem.getClip();
-            // Open audio clip and load samples from the audio input stream.
+          
             clip.open(audioIn);
             clip.start();
         } catch (UnsupportedAudioFileException e) {

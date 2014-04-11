@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import simulationMetier.ElementsMobile;
 
 public class Configurations {
+	/**
+	 * Fichier regroupant les parametres principaux de l'application accessible de partout
+	 */
 	private static int grilleX;
 	private static int grilleY;
 	private static int nbrObstacle;

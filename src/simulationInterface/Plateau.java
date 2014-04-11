@@ -26,6 +26,12 @@ public class Plateau {
 	private JPanel contentpan;
 	private JFrame fen;
 
+	/**
+	 * 
+	 * Relatif a l'affichage du tableau
+	 *
+	 *
+	 */
 
 	public Plateau(int largeur, int longueur, Case[][] casesDonjons) {
 		this.caseDonjons = new Case[largeur][longueur];

@@ -41,7 +41,7 @@ public class AffichageStats extends JFrame{
 
 	private long vitesse = 300;
 
-	public AffichageStats() {
+	public AffichageStats() { // On creer l'affichage graphique
 		this.nbrhumaclass = new JLabel();
 		this.nbrhumaeclair = new JLabel();
 		this.nbrhumateleport = new JLabel();
@@ -128,7 +128,7 @@ public class AffichageStats extends JFrame{
 		
 	}
 
-	public void rafraichir(int nbrTour) {
+	public void rafraichir(int nbrTour) { // Methode qui permet de rafraichir l'affichage
 		this.tour.setText(Integer.toString(nbrTour));
 
 		this.nbrhumaclass.setText(Integer.toString(Configurations.getNbrHumainsClassique()));

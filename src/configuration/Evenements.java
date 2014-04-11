@@ -6,6 +6,10 @@ import java.awt.event.ActionListener;
 public class Evenements implements ActionListener{
 
 	private FenetreConfig fen;
+	/**
+	 * 
+	 * Evenement des configs utilisateur , valide ou non les entrées utilisateur
+	 */
 
 	public Evenements(FenetreConfig fen) {
 		this.fen = fen;
