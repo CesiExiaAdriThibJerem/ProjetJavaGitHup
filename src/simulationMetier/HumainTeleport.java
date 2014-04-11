@@ -6,7 +6,7 @@ import configuration.Configurations;
 
 public class HumainTeleport extends ElementsMobile {
 	private ElementsMobile  e;
-	HumainTeleport(Donjon donjon)
+	HumainTeleport(Donjon donjon)//constructeur des Humains teleport dit "les genius"
 	{
 		setImage("hommeteleport.png");
 		this.deplacement=1;
@@ -19,9 +19,9 @@ public class HumainTeleport extends ElementsMobile {
 		this.nomE = "humaintp";
 	}
 
-	public void bouger()
+	public void bouger()//implementation de la methode abstraite bouger pour les humains
 	{
-		if (mort == false) {
+		if (mort == false) {//check si l'humain est mort ou non
 			Random random = new Random();
 
 			int caseDeplacement = random.nextInt(3);
@@ -29,6 +29,12 @@ public class HumainTeleport extends ElementsMobile {
 
 			if(vivant=true)
 			{
+				
+				//l'humain teleporteur se deplace de maniere aleatoire mais contrairement aux humains classiques
+				// et grace à son genie, il a inventé une machine de teleportation qui lui permet de bouger
+				// de plus d'une case. Cependant la machine à un defaut de calibrage ce qu'il fait
+				// qu'il se deplace d'une, deux ou trois cases de maniere aleatoire.
+				
 				switch(caseDeplacement)
 				{
 				case 0 :

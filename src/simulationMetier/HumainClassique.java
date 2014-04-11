@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class HumainClassique extends ElementsMobile {
 	private ElementsMobile  e;
-	HumainClassique(Donjon donjon)
+	HumainClassique(Donjon donjon)//constructeur des Humains classiques dit "les débiles"
 	{
 		setImage("hommeclassique.png");
 		this.deplacement=1;
@@ -17,10 +17,13 @@ public class HumainClassique extends ElementsMobile {
 		this.nomE = "humainclass";
 	}
 
-	public void bouger() 
+	public void bouger() //implementation de la methode abstraite bouger pour les humains
 	{
-		if (mort == false) {
+		if (mort == false) {//check si l'humain est mort ou non
 			Random random = new Random();
+			
+			// l'humain classique à des mouvements totalement aleatoire : à chaque mouvement il selectionne 
+			// une direction au hasard puis bouge sauf si il ya un autre humain deja present
 			if(vivant==true)
 			{
 

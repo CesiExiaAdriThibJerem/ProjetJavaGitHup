@@ -11,7 +11,7 @@ public class Monstre extends ElementsMobile
 	@SuppressWarnings("unused")
 	private boolean verif ;
 	private ElementsMobile  e;
-	Monstre(Donjon donjon)
+	Monstre(Donjon donjon)//constructeur de la classe monstre
 	{
 
 		this.donjon = donjon;
@@ -26,11 +26,13 @@ public class Monstre extends ElementsMobile
 	}
 
 
-	public void bouger()
+	public void bouger()//definition de la methode abstraite bouger pour le monstre
 	{		
 
 
-
+		//detection des differents obstacles/elements autour du monstre
+		//si il ya un obstacle le monstre tourne à droite, au bout de plusieurs fois, il fait un demi-tour
+		//si c'est un humain il le mange et gagne 20 points de vie
 		if (!this.donjon.getPosition(getX() + 1, getY()).estVide() && direction == sud ) {
 
 			e = donjon.getElementMobile(getX()+1, getY());
@@ -50,7 +52,6 @@ public class Monstre extends ElementsMobile
 				}
 			}
 			else {
-				//System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 
@@ -65,7 +66,7 @@ public class Monstre extends ElementsMobile
 					}
 				}
 				else {
-					e.mourir();
+					e.mourir();//appel à la methode mourir pour tuer l'humain
 					hpMob = hpMob + 20;
 
 					setX(getX() + 1);
@@ -81,7 +82,6 @@ public class Monstre extends ElementsMobile
 				setX(getX() + 1);
 			}
 			else {
-				//	System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 
@@ -97,7 +97,7 @@ public class Monstre extends ElementsMobile
 
 				}
 				else {
-					e.mourir();
+					e.mourir();//appel à la methode mourir pour tuer l'humain
 
 					setX(getX() + 1);
 				}
@@ -123,7 +123,6 @@ public class Monstre extends ElementsMobile
 				}
 			}
 			else {
-				//System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 
@@ -138,7 +137,7 @@ public class Monstre extends ElementsMobile
 					}
 				}
 				else {
-					e.mourir();
+					e.mourir();//appel à la methode mourir pour tuer l'humain
 
 
 					setY(getY()+1);
@@ -152,7 +151,6 @@ public class Monstre extends ElementsMobile
 				setY(getY()+1);
 			}
 			else {
-				//System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 
@@ -167,7 +165,7 @@ public class Monstre extends ElementsMobile
 					}
 				}
 				else {
-					e.mourir();
+					e.mourir();//appel à la methode mourir pour tuer l'humain
 
 					setY(getY()+1);
 				}
@@ -191,7 +189,6 @@ public class Monstre extends ElementsMobile
 				}
 			}
 			else {
-				//System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 
@@ -206,7 +203,7 @@ public class Monstre extends ElementsMobile
 					}
 				}
 				else {
-					e.mourir();
+					e.mourir();//appel à la methode mourir pour tuer l'humain
 
 					setX(getX()-1);
 				}
@@ -221,7 +218,6 @@ public class Monstre extends ElementsMobile
 				setX(getX()-1);
 			}
 			else {
-				//System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 
@@ -236,7 +232,7 @@ public class Monstre extends ElementsMobile
 					}
 				}
 				else {
-					e.mourir();
+					e.mourir();//appel à la methode mourir pour tuer l'humain
 
 					setX(getX()-1);
 				}
@@ -260,7 +256,6 @@ public class Monstre extends ElementsMobile
 				}
 			}
 			else {
-				//System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 
@@ -275,7 +270,7 @@ public class Monstre extends ElementsMobile
 					}
 				}
 				else {
-					e.mourir();
+					e.mourir();//appel à la methode mourir pour tuer l'humain
 
 					setY(getY()-1);
 				}
@@ -288,7 +283,6 @@ public class Monstre extends ElementsMobile
 				setY(getY()-1);
 			}
 			else {
-				//	System.out.println(e.getNomE());
 				if (e.getNomE().equals("Pierre")) {
 					direction = est;
 
@@ -303,7 +297,7 @@ public class Monstre extends ElementsMobile
 					}
 				}
 				else {
-					e.mourir();
+					e.mourir();//appel à la methode mourir pour tuer l'humain
 
 					setY(getY()-1);
 				}

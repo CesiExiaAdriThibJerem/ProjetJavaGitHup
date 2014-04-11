@@ -5,7 +5,7 @@ import java.util.Random;
 public class HumainBuffer extends ElementsMobile {
 	private ElementsMobile e;
 
-	HumainBuffer(Donjon donjon)
+	HumainBuffer(Donjon donjon)//constructeur des Humains buffer dit "les fuyards"
 	{
 		setImage("hommebuufer.png");
 		this.deplacement=1;
@@ -19,14 +19,16 @@ public class HumainBuffer extends ElementsMobile {
 		this.nomE = "humainbuf";
 	}
 
-	public void bouger() 
+	public void bouger() //implementation de la methode abstraite bouger pour les humains
 	{
-		//Si il y a un monstre lance la méthode bouger
-		if (detection() == true)
+		//l'humain buffer bouge uniquement si il vois le monstre, si il le vois il bougeras directement dans 
+		//la direction opposé auquel se trouve le monstre
+		
+		if (detection() == true)//Si il y a un monstre lance la méthode bouger
 		{
 
 			
-			if (mort == false) {
+			if (mort == false) {//check si l'humain est mort ou non
 				Random random = new Random();
 				if(vivant==true)
 				{

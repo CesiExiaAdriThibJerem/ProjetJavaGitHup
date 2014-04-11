@@ -6,10 +6,10 @@ import configuration.Configurations;
 
 public class HumainEclaireur extends ElementsMobile  {
 	private ElementsMobile  e;
-	HumainEclaireur(Donjon donjon)
+	HumainEclaireur(Donjon donjon)//constructeur des humains eclaireurs dits "les peureux"
 	{
 		setImage("hommeeclaireur.png");
-		this.deplacement=1;
+		this.deplacement=2;
 		this.vision=2;
 		this.vivant= true;
 		this.direction=sud;
@@ -18,12 +18,16 @@ public class HumainEclaireur extends ElementsMobile  {
 		this.donjon = donjon;
 		this.nomE = "humaineclair";
 	}
-	public void bouger() 
+	public void bouger() //implementation de la methode abstraite bouger pour les humains
 	{
-		if (mort == false) {
+		if (mort == false) {//check si l'humain est mort ou non
 			Random random = new Random();
 			if(vivant==true)
 			{
+				
+				//l'humain eclaireur bouge de 2 cases par 2 cases cependant il a tellement peur de se 
+				// retrouver face au monstre que dés qu'il croise quelque chose qui bouge ou non
+				// il part dans la direction opposée
 
 				direction= random.nextInt(4);
 				if (!this.donjon.getPosition(getX() + 2, getY()).estVide() && direction == sud ) {
