@@ -1,15 +1,17 @@
 package simulationMetier;
 
-
-
 import java.util.ArrayList;
 import java.util.Random;
 
 import configuration.Configurations;
 import simulationInterface.Plateau;
 
+/*méthode qui initialise les attributs du donjon , nombre ce chaque éléments (mobiles ou obstacle), du plateau, contient les geteurs des largeurs longeur de la grille, 
+ainsi qu'instancier l'arrayList des objets mobiles*/
+
 public class Donjon {
 
+	// Attributs et geteurs
 	private int largeurGrille;
 	public int getLargeurGrille() {
 		return largeurGrille;
@@ -124,6 +126,8 @@ public class Donjon {
 
 	}
 
+	// methode servant a placer les pierres à partir de la méthode de placement des élements mobiles
+
 	private void placerLesPierres() {
 		Pierre e;
 
@@ -136,6 +140,7 @@ public class Donjon {
 		}
 	}
 
+	//methode servant à placer le monstre à partir de la méthode de palcement des élements mobiles
 
 	private void placerLeMonstre() {
 
@@ -146,22 +151,19 @@ public class Donjon {
 		this.placerUnElementMobileAuHasard(monstre);
 		this.plateauJeu.placerElement(monstre);
 
-		//LePlacer sur le plateau		
 
 	}
 
-
+	// methode servant à récuperer les coordonnées d'une case
 	public Case getPosition(int x, int y)
 	{
-		//System.out.println(Configurations.getGrilleX());
-		//	System.out.println(x +" "+ y);
+
 		if ((x >= Configurations.getGrilleX()-1 || x < 0) || (y >= Configurations.getGrilleX()-1 || y < 0)) {
-			//System.out.print("faux");
 			return this.cases[0][0];
 
 		}
 		else {
-			//System.out.print("vrai");
+
 			return this.cases[y][x];
 		}
 
@@ -215,7 +217,7 @@ public class Donjon {
 				x = this.hasard.nextInt(this.longueurGrille);
 				y = this.hasard.nextInt(this.longueurGrille);
 			}
-			
+
 		}
 
 		// renvoi a ElementsMobile les nouvelles coordonnées
@@ -235,7 +237,7 @@ public class Donjon {
 
 	}
 
-	// Placer les humains Buffers
+	//methode pour placer les humains Buffers (fuyard)
 	private void placerLesBuffers()
 	{
 		HumainBuffer e;
@@ -250,7 +252,7 @@ public class Donjon {
 
 		}
 	}
-
+	// methode pour placer les humains classiques
 	private void placerLesClassiques()
 	{
 		HumainClassique e;
@@ -265,6 +267,7 @@ public class Donjon {
 
 		}
 	}
+	// methode pour placer les eclaireurs
 	private void placerLesEclaireur()
 	{
 		HumainEclaireur e;
@@ -279,6 +282,7 @@ public class Donjon {
 
 		}
 	}
+	// methode pour placer les humains teleporteurs
 	private void placerLesTeleports()
 	{
 		HumainTeleport e;
@@ -294,11 +298,12 @@ public class Donjon {
 		}
 	}
 
+	// methode assurant le deroulement de la partie, appel le rafraichissement 
+
 	public void jouer() {
 
 		plateauJeu.rafraichir();
 		for (ElementsMobile a : this.mobile) {
-			//System.out.println("Monstre : " + a.getX() +" " + a.getY());
 
 			a.bouger();
 
@@ -306,8 +311,7 @@ public class Donjon {
 
 			if(hpMob==0 )
 			{
-				//System.out.println("Mob Mort");
-				//System.exit(0);
+
 			}
 
 			if (!a.isMort()) {
@@ -328,10 +332,12 @@ public class Donjon {
 
 	}
 
+	// appel la methode fermant le jeu
 	public void finDuJeu() {
 		plateauJeu.finDuJeu();
 	}
 
+	// getter pour les elements mobiles
 	public ElementsMobile getElementMobile(int x, int y) {
 		for (ElementsMobile e : this.mobile) {
 			if (e != null) {

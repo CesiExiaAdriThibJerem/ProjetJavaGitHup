@@ -10,12 +10,12 @@ public class Case {
 	private Image image;
 	protected boolean vide;
 
-
+	// methode retournat le non de l'image
 	public Image getImage() {
 		return image;
 	}
 
-
+	// methode récupérant le nom de l'image pour la lire dans l'affichage remonte aussi le boolean de estVide
 	public Case(String img, boolean vide)
 	{
 		this.vide = vide;
@@ -34,6 +34,8 @@ public class Case {
 
 
 	}
+
+	//methode servant à qualifer de vide ou non une case pour savoir si le deplacemet est autorisé
 
 	public boolean estVide() {
 		return this.vide;
