@@ -133,7 +133,7 @@ public class Donjon {
 
 		for (int i = 0; i < this.nombreObstacle; i++)
 		{
-			e = new Pierre();
+			e = new Pierre(this);
 			this.mobile.add(e);
 			this.placerUnElementMobileAuHasard(e);
 			this.plateauJeu.placerElement(e);

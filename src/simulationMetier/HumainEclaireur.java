@@ -143,5 +143,10 @@ public class HumainEclaireur extends ElementsMobile  {
 		}
 
 	}
+	@Override
+	public void bougerPierre(int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

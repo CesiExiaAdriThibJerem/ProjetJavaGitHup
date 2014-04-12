@@ -147,4 +147,10 @@ public abstract class ElementsMobile {
 
 
 	}
+
+
+
+
+	public abstract void bougerPierre(int x, int y);
+	
 }

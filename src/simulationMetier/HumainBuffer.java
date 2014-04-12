@@ -207,6 +207,12 @@ public class HumainBuffer extends ElementsMobile {
 		return this.direction;
 	}
 
+	@Override
+	public void bougerPierre(int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 
 }

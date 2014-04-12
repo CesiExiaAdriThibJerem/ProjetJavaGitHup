@@ -323,4 +323,11 @@ public class Monstre extends ElementsMobile
 
 	}
 
+
+	@Override
+	public void bougerPierre(int x, int y) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

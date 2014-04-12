@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class HumainClassique extends ElementsMobile {
 	private ElementsMobile  e;
+	
 	HumainClassique(Donjon donjon)//constructeur des Humains classiques dit "les débiles"
 	{
 		setImage("hommeclassique.png");
@@ -22,8 +23,8 @@ public class HumainClassique extends ElementsMobile {
 		if (mort == false) {//check si l'humain est mort ou non
 			Random random = new Random();
 			
-			// l'humain classique à des mouvements totalement aleatoire : à chaque mouvement il selectionne 
-			// une direction au hasard puis bouge sauf si il ya un autre humain deja present
+			/* l'humain classique à des mouvements totalement aleatoire : à chaque mouvement il selectionne 
+			une direction au hasard puis bouge sauf si il ya un autre humain deja present*/
 			if(vivant==true)
 			{
 
@@ -45,6 +46,11 @@ public class HumainClassique extends ElementsMobile {
 
 							direction = random.nextInt(4);
 						}
+						else if (e.getNomE().equals("Pierre")) {
+							if (random.nextInt(2) == 0) {
+								e.bougerPierre(e.getX()+ 1, e.getY());
+							}
+						}
 
 					}
 
@@ -63,6 +69,11 @@ public class HumainClassique extends ElementsMobile {
 						if (e.getNomE().equals("Humain")) {
 
 							direction = random.nextInt(4);
+						}
+						else if (e.getNomE().equals("Pierre")) {
+							if (random.nextInt(2) == 0) {
+								e.bougerPierre(e.getX(), e.getY()+1);
+							}
 						}
 					}
 				}
@@ -86,6 +97,11 @@ public class HumainClassique extends ElementsMobile {
 
 							direction = random.nextInt(4);
 						}
+						else if (e.getNomE().equals("Pierre")) {
+							if (random.nextInt(2) == 0) {
+								e.bougerPierre(e.getX()- 1, e.getY());
+							}
+						}
 					}
 				}
 
@@ -104,12 +120,23 @@ public class HumainClassique extends ElementsMobile {
 
 							direction = random.nextInt(4);
 						}
+						else if (e.getNomE().equals("Pierre")) {
+							if (random.nextInt(2) == 0) {
+								e.bougerPierre(e.getX(), e.getY()-1);
+							}
+						}
 					}
 				}
 
 			}
 		}
 
+	}
+
+	@Override
+	public void bougerPierre(int x, int y) {
+		// TODO Auto-generated method stub
+		
 	}
 }
 
