@@ -2,6 +2,8 @@ package configuration;
 
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
 
@@ -49,6 +51,9 @@ public class FenetreConfig extends JFrame{
 		this.setSize(800, 400);
 
 		this.setLayout(new GridLayout(7,1));
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("image/icone.png");
+		this.setIconImage(icon);
 
 		Font police = new Font("Calibri", Font.PLAIN, 14);
 		Font policeAttention = new Font("Calibri", Font.BOLD, 15);

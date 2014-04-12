@@ -3,6 +3,8 @@ package simulationInterface;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.ListIterator;
 
@@ -36,6 +38,9 @@ public class Plateau {
 	public Plateau(int largeur, int longueur, Case[][] casesDonjons) {
 		this.caseDonjons = new Case[largeur][longueur];
 		this.mobile = new ArrayList<>();
+		
+		
+		
 
 		this.largeur = largeur;
 		this.longueur = longueur;
@@ -51,7 +56,10 @@ public class Plateau {
 
 
 		fen = new JFrame();
-
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("image/icone.png");
+		fen.setIconImage(icon);
+		
 		fen.setTitle("Escape The TReX");
 		fen.setLocationRelativeTo(null);
 		fen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

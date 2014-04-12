@@ -1,6 +1,8 @@
 package simulationInterface;
 
 import java.awt.GridLayout;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -47,6 +49,9 @@ public class AffichageStats extends JFrame{
 		this.nbrhumateleport = new JLabel();
 		this.nbrhumabuffer = new JLabel();
 		this.pdvMonstre = new JLabel();
+		
+		Image icon = Toolkit.getDefaultToolkit().getImage("image/icone.png");
+		this.setIconImage(icon);
 
 		this.tour = new JLabel();
 

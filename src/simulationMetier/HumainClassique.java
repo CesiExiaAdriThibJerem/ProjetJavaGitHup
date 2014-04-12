@@ -50,6 +50,9 @@ public class HumainClassique extends ElementsMobile {
 							if (random.nextInt(2) == 0) {
 								e.bougerPierre(e.getX()+ 1, e.getY());
 							}
+							else {
+								direction = random.nextInt(4);
+							}
 						}
 
 					}
